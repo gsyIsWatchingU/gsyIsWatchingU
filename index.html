@@ -494,9 +494,9 @@
 
      <header>
           <h1>观赏鱼</h1>
-          <div class="subtitle">前端开发工程师 | 专注 React/Vue 生态与工程化</div>
+          <div class="subtitle">前端开发工程师 | React/Vue 生态与工程化</div>
           <div class="header-info">
-               华中科技大学 2024级推荐免试硕士生 | 西南大学通信工程专业（前5%） | 国家励志奖学金 | 全国大学生数学竞赛一等奖 | CET6
+               985 推荐免试硕士生 | 211 本科优秀毕业生（前5%） | 国家励志奖学金 | 全国大学生数学竞赛一等奖 | CET6
           </div>
      </header>
 
@@ -511,10 +511,11 @@
                          <p style="font-size: 0.8rem; color: #718096; margin-bottom: 10px;">选择技术栈，相关项目和作品集会自动高亮</p>
                          <div class="tech-tags-container">
                               <span class="tech-filter-tag" data-tech="React">React</span>
-                              <span class="tech-filter-tag" data-tech="Vue">Vue</span>
-                              <span class="tech-filter-tag" data-tech="TypeScript">TypeScript</span>
-                              <span class="tech-filter-tag" data-tech="Vite">Vite</span>
-                              <span class="tech-filter-tag" data-tech="UniApp">UniApp</span>
+<span class="tech-filter-tag" data-tech="Vue">Vue</span>
+                               <span class="tech-filter-tag" data-tech="Pinia">Pinia</span>
+                               <span class="tech-filter-tag" data-tech="TypeScript">TypeScript</span>
+<span class="tech-filter-tag" data-tech="Vite">Vite</span>
+                               <span class="tech-filter-tag" data-tech="UniApp">UniApp</span>
                               <span class="tech-filter-tag" data-tech="Ant Design">Ant Design</span>
                               <span class="tech-filter-tag" data-tech="Element UI">Element UI</span>
                               <span class="tech-filter-tag" data-tech="ECharts">ECharts</span>
@@ -555,9 +556,9 @@
 
                <!-- 主内容区域 -->
                <div class="main-area">
-                    <!-- 个人简介 -->
+                   <!-- 个人简介 -->
                     <section id="about">
-                         <h2 class="section-title" data-icon="👤">个人简介</h2>
+                         <h2 class="section-title" >个人简介</h2>
                          <div class="content">
                               <div class="intro-text">
                                    <p>您好，我是观赏鱼，一名来自华中科技大学（2024级推荐免试硕士生）的前端开发工程师。本科毕业于西南大学通信工程专业（前5%），曾获国家励志奖学金、全国大学生数学竞赛一等奖等多项荣誉。
@@ -578,9 +579,125 @@
                          </div>
                     </section>
 
+                    <!-- 幻灯片展示 -->
+                    <section id="slideshow">
+                      <h2 class="section-title">近期工作概览</h2>
+                      <div class="content">
+                        <div class="slideshow-container">
+                          <div class="slide fade">
+                            <img src="./workshow.jpg" style="width:100%;height:420px">
+                          </div>
+                          <div class="slide fade">
+                            <img src="./workshow2.png" style="width:100%;height:420px">
+                          </div>
+                          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                        <div style="text-align:center;margin-top:10px;">
+                          <span class="dot" onclick="currentSlide(1)"></span>
+                          <span class="dot" onclick="currentSlide(2)"></span>
+                        </div>
+                      </div>
+                    </section>
+
+                    <style>
+                      .slideshow-container {
+                        position: relative;
+                        max-width: 100%;
+                        margin: auto;
+                        overflow: hidden;
+                      }
+
+                      .slide {
+                        display: none;
+                      }
+
+                      .fade {
+                        animation: fadeEffect 0.5s ease-in-out;
+                      }
+
+                      @keyframes fadeEffect {
+                        from {
+                          opacity: 0;
+                        }
+                        to {
+                          opacity: 1;
+                        }
+                      }
+
+                      .prev, .next {
+                        cursor: pointer;
+                        position: absolute;
+                        top: 50%;
+                        width: auto;
+                        padding: 16px;
+                        margin-top: -22px;
+                        color: white;
+                        font-weight: bold;
+                        font-size: 18px;
+                        transition: 0.6s ease;
+                        border-radius: 0 3px 3px 0;
+                        user-select: none;
+                        background-color: rgba(0,0,0,0.3);
+                      }
+
+                      .next {
+                        right: 0;
+                        border-radius: 3px 0 0 3px;
+                      }
+
+                      .prev:hover, .next:hover {
+                        background-color: rgba(0,0,0,0.8);
+                      }
+
+                      .dot {
+                        cursor: pointer;
+                        height: 15px;
+                        width: 15px;
+                        margin: 0 2px;
+                        background-color: #bbb;
+                        border-radius: 50%;
+                        display: inline-block;
+                        transition: background-color 0.6s ease;
+                      }
+
+                      .active, .dot:hover {
+                        background-color: #717171;
+                      }
+                    </style>
+
+                    <script>
+                      let slideIndex = 1;
+
+                      function showSlides(n) {
+                        const slides = document.querySelectorAll('.slide');
+                        const dots = document.querySelectorAll('.dot');
+                        if (n > slides.length) { slideIndex = 1 }
+                        if (n < 1) { slideIndex = slides.length }
+                        slides.forEach(slide => slide.style.display = 'none');
+                        dots.forEach(dot => dot.classList.remove('active'));
+                        slides[slideIndex - 1].style.display = 'block';
+                        dots[slideIndex - 1].classList.add('active');
+                      }
+
+                      function plusSlides(n) {
+                        showSlides(slideIndex += n);
+                      }
+
+                      function currentSlide(n) {
+                        showSlides(slideIndex = n);
+                      }
+
+                      document.addEventListener('DOMContentLoaded', function() {
+                        showSlides(slideIndex);
+                      });
+                    </script>
+                     
+
+
                     <!-- 项目集 -->
                     <section id="projects">
-                         <h2 class="section-title" data-icon="🏗️">项目集</h2>
+                         <h2 class="section-title" >项目集</h2>
                          <div class="content">
                               <div class="project-grid">
                                    <div class="project-card" data-tech="React,TypeScript,Umi,Ant Design,UniApp">
@@ -645,9 +762,8 @@
                                    <div class="project-card" data-tech="Java,jQuery,Bootstrap,MySQL">
                                         <div class="card-header">湖北省社会科学项目申报系统(HSAS)</div>
                                         <div class="card-body">
-                                             <p>该项目负责进行湖北省社科课题、项目和奖励的申报、评审、统计分析等工作。这是一个典型的Java
-                                                  Web项目，采用了传统的SSH架构，主要用于评奖系统的管理和操作。前端采用了传统的JSP + jQuery +
-                                                  Bootstrap的组合，后端则使用了Spring生态系统进行业务逻辑处理和安全控制，Hibernate负责数据持久化，MySQL作为底层数据库。
+                                             <p>该项目负责进行湖北省社科课题、项目和奖励的申报、评审、统计分析等工作。前端采用了传统的JSP + jQuery +
+                                                  Bootstrap的组合。
                                              </p>
                                              <div class="tech-stack">
                                                   <span class="tech-tag">SSH</span>
@@ -660,31 +776,13 @@
                                              </div>
                                         </div>
                                    </div>
-                                   <div class="project-card" data-tech="Vue,Element UI,UniApp">
-                                        <div class="card-header">智慧工地安全管理系统(BigFire)</div>
-                                        <div class="card-body">
-                                             <p>该项目设计并实现基于IoT、AI视频分析的智慧工地系统。核心模块包括人员安全、设备监控（塔吊、升降机）、环境监测、视频AI分析等，旨在提升工地安全管理效率。
-                                             </p>
-                                             <div class="tech-stack">
-                                                  <span class="tech-tag">Vue</span>
-                                                  <span class="tech-tag">Element UI</span>
-                                                  <span class="tech-tag">UniApp</span>
-                                             </div>
-                                             <div class="btn-group">
-                                                  <a href="https://www.bigfire.hk" class="btn" target="_blank">访问项目</a>
-
-                                             </div>
-                                        </div>
-                                   </div>
                               </div>
-
-
                          </div>
                     </section>
 
                     <!-- 作品集 -->
 <section id="portfolio">
-    <h2 class="section-title" data-icon="📦">作品集</h2>
+    <h2 class="section-title" >作品集</h2>
     <div class="content">
         <ul class="portfolio-list">
             <li class="portfolio-item" data-tech="Vue,TypeScript,Vite,Pinia">
@@ -701,53 +799,86 @@
                 </div>
             </li>
 
-            <li class="portfolio-item" data-tech="Vue">
+            <li class="portfolio-item" data-tech="Vue,TypeScript,Vite,Pinia">
                 <strong>企业级类 vue-use Composition 库架构设计与实践</strong>
                 <p>一个基于 Vue 3 + VueUse + Pinia 的电商后台管理系统，通过 useDebounce、useThrottle、useStorage、useWebSocket 等组合函数将防抖搜索、节流分页、权限管理、实时推送等常见业务场景封装为可复用的 composable，配合 Express + Prisma + Redis 后端提供完整的前后端解决方案。</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Vue 3</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Vite</span>
+                    <span class="tech-tag">Pinia</span>
+                    <span class="tech-tag">VueUse</span>
+                </div>
                 <div class="btn-group">
                     <a href="https://vueflow-frontend.vercel.app/" class="btn" target="_blank">访问作品</a>
                 </div>
             </li>
 
-            <li class="portfolio-item" data-tech="React">
+            <li class="portfolio-item" data-tech="React,TypeScript,Vite,Zustand">
                 <strong>企业级类 react-use hooks 库架构设计与实践</strong>
-                <p>使用React19开发一套实用的React Hooks库，封装常用逻辑，提高代码复用性。</p>
+                <p>一个完整的 React + Node.js 全栈项目，展示了 react-use 库在真实业务场景中的最佳实践。通过 useDebounce、useThrottle、useAsync、useIntersection、useLocalStorage、useToggle、useEvent 等组合函数将防抖搜索、节流滚动、无限加载、状态持久化、实时推送等常见业务场景封装为可复用的 hooks，配合 Express + Prisma 后端提供完整的前后端解决方案。</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Vite</span>
+                    <span class="tech-tag">react-use</span>
+                    <span class="tech-tag">Zustand</span>
+                </div>
                 <div class="btn-group">
                     <a href="https://react-flow-gsy.vercel.app/" class="btn" target="_blank">访问作品</a>
                 </div>
             </li>
 
-            <li class="portfolio-item" data-tech="Nodejs">
+            <li class="portfolio-item" data-tech="Nodejs,TypeScript">
                 <strong>企业级团队脚手架命令行工具架构设计与实践</strong>
-                <p>使用Nodejs开发CLI工具，实现项目快速初始化、模板选择、依赖安装等功能，统一团队开发规范。</p>
+                <p>快速创建标准化、符合团队规范的企业级项目。实现交互式项目创建、多模板支持（Vue3/React/Node.js）、远程模板拉取、插件系统（支持生命周期钩子）、动态配置（TypeScript/ESLint/Prettier/Commitlint）、Git 提交规范集成（Husky + Commitlint）等功能，统一团队开发规范。</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Commander</span>
+                </div>
                 <div class="btn-group">
                     <a href="https://github.com/gsyIsWatchingU/auto-cli" class="btn" target="_blank">仓库地址</a>
                 </div>
             </li>
 
-            <li class="portfolio-item" data-tech="React,Vue">
+            <li class="portfolio-item" data-tech="React,Vue,TypeScript">
                 <strong>企业级监控平台全栈架构设计与实践</strong>
-                <p>结合Vanilla JS、React18、Vue3等技术，构建一个从前端埋点、数据收集到后端分析、可视化的全链路监控系统。</p>
+                <p>一个功能完整的企业级监控平台，包含前端埋点 SDK（Vanilla JS 核心库 + React/Vue/Node.js 插件）和可视化 Dashboard。前端 SDK 支持 sendBeacon + fetch 降级上报、IndexedDB 本地缓存、IndexedDB 本地缓存、错误聚合与堆栈哈希归因、3σ 动态告警阈值、P50/P90/P99 百分位统计、用户行为追踪（点击/路由/回放）等核心功能。</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Vue</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">ECharts</span>
+                </div>
                 <div class="btn-group">
                     <a href="https://github.com/gsyIsWatchingU/my-monitor" class="btn" target="_blank">仓库地址</a>
                 </div>
             </li>
 
-            <li class="portfolio-item" data-tech="React">
+            <li class="portfolio-item" data-tech="Vue,TypeScript">
                 <strong>企业级编辑器类飞书文档架构设计与实践</strong>
-                <p>一个基于 Vue3/Vite + Express/SQLite + Yjs 的轻量级在线文档协作平台，支持个人文档管理、社区共享、实时协同编辑和WebSocket通知等功能。</p>
+                <p>一个类似语雀的轻量级在线文档协作平台，基于 Vue 3 + TipTap 富文本编辑器 + Yjs 实时协同编辑。支持个人文档管理、社区公开文档、分享链接（只读/可编辑两种模式）、协作申请与审批流程、WebSocket 实时通知（点赞/协作申请/审批结果）等核心功能。前端采用 Composition API + Vue Router 4，后端使用 Express + SQLite。</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Vue 3</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Vite</span>
+                    <span class="tech-tag">TipTap</span>
+                    <span class="tech-tag">Yjs</span>
+                    <span class="tech-tag">Vue Router</span>
+                </div>
                 <div class="btn-group">
                     <a href="https://write-here-gsy.vercel.app/" class="btn" target="_blank">访问作品</a>
                 </div>
             </li>
 
-            <li class="portfolio-item" data-tech="React">
+            <!-- <li class="portfolio-item" data-tech="React">
                 <strong>企业级类 Figma AI 设计与应用生成引擎架构设计与实践</strong>
                 <p>使用React19、Langgraphjs、Nestjs，探索D2C（Design to Code）技术，实现从UI设计稿到前端代码的自动生成。</p>
                 <div class="btn-group">
                     <a href="" class="btn" target="_blank">访问作品</a>
                 </div>
-            </li>
+            </li> -->
         </ul>
     </div>
 </section>
