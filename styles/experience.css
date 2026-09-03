@@ -1,0 +1,318 @@
+
+.experience-section {
+  padding: 0 0 var(--section-gap);
+}
+
+.experience-section__heading {
+  margin-bottom: clamp(28px, 3vw, 44px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.experience-section__eyebrow {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font: 600 10px/1.4 var(--font-mono);
+  letter-spacing: 0.15em;
+}
+
+.experience-section h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(46px, 5.2vw, 74px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.experience-section__note {
+  max-width: 360px;
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: right;
+}
+
+.experience-section__note span {
+  display: inline-block;
+  margin-left: 6px;
+  color: var(--ink);
+  transition: transform 260ms ease;
+}
+
+.experience-section__heading:hover .experience-section__note span {
+  transform: translate(4px, 4px);
+}
+
+.experience-entry {
+  position: relative;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.experience-entry::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--ink) 0 64%, var(--orange) 64% 78%, var(--blue) 78% 91%, var(--green) 91%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.experience-entry:hover::before {
+  transform: scaleX(1);
+}
+
+.experience-entry__header {
+  min-height: 0;
+  padding: clamp(28px, 3vw, 40px) 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(22px, 3vw, 44px);
+}
+
+.experience-entry__company-label {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0 0 8px;
+  color: var(--muted);
+  font: 600 12px/1.4 var(--font-mono);
+  letter-spacing: 0.13em;
+}
+
+.experience-entry__identity {
+  display: grid;
+  grid-template-columns: max-content minmax(200px, 1fr);
+  grid-template-rows: auto auto;
+  align-items: end;
+  column-gap: clamp(36px, 5vw, 80px);
+}
+
+.experience-entry__identity h3 {
+  grid-column: 1;
+  grid-row: 2;
+  margin: 0;
+  font-size: clamp(36px, 3.8vw, 54px);
+  font-weight: 650;
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.experience-entry__details {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.experience-entry__department {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.experience-entry__role {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.experience-entry time {
+  justify-self: end;
+  align-self: start;
+  padding: 9px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font: 500 12px/1 var(--font-mono);
+  white-space: nowrap;
+}
+
+.experience-entry__achievements {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.experience-entry__achievements li {
+  min-width: 0;
+  min-height: 230px;
+  padding: clamp(26px, 2.4vw, 34px);
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  align-content: start;
+  gap: clamp(18px, 2vw, 30px);
+  border-bottom: 1px solid var(--line);
+  transition: color 320ms ease, background 320ms ease;
+}
+
+.experience-entry__achievements li:nth-child(odd) {
+  padding-left: 0;
+  border-right: 1px solid var(--line);
+}
+
+.experience-entry__achievements li:nth-child(even) {
+  padding-right: 0;
+}
+
+.experience-entry__achievements li:hover {
+  color: white;
+  background: var(--ink);
+}
+
+.experience-entry__index {
+  padding-top: 5px;
+  color: #aaa8a2;
+  font: 500 13px/1 var(--font-mono);
+  transition: color 320ms ease;
+}
+
+.experience-entry__achievements li:hover .experience-entry__index {
+  color: var(--orange);
+}
+
+.experience-entry__achievements h4 {
+  margin: 0 0 14px;
+  font-size: clamp(19px, 1.65vw, 24px);
+  line-height: 1.28;
+}
+
+.experience-entry__achievements p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+  text-align: justify;
+  transition: color 320ms ease;
+}
+
+.experience-entry__achievements li:hover p {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.experience-entry__footer {
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: #96938c;
+  font: 600 10px/1 var(--font-mono);
+  letter-spacing: 0.12em;
+}
+
+@media (max-width: 980px) {
+  .experience-entry__header {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .experience-entry__identity {
+    display: block;
+  }
+
+  .experience-entry__details {
+    margin-top: 12px;
+  }
+
+  .experience-entry__achievements li {
+    min-height: 260px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .experience-entry__achievements li:nth-child(odd) {
+    padding-left: 0;
+  }
+
+  .experience-entry__achievements li:nth-child(even) {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 680px) {
+  .experience-section {
+    padding-top: 0;
+  }
+
+  .experience-section__heading {
+    margin-bottom: 28px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .experience-section__note {
+    margin: 0;
+    text-align: left;
+  }
+
+  .experience-entry__header {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    align-items: start;
+    column-gap: 16px;
+    row-gap: 14px;
+  }
+
+  .experience-entry__identity h3 {
+    font-size: clamp(36px, 11vw, 46px);
+  }
+
+  .experience-entry__details {
+    margin-top: 12px;
+  }
+
+  .experience-entry__department {
+    font-size: 15px;
+  }
+
+  .experience-entry__role {
+    font-size: 13px;
+  }
+
+  .experience-entry time {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  .experience-entry__achievements {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-entry__achievements li,
+  .experience-entry__achievements li:nth-child(odd),
+  .experience-entry__achievements li:nth-child(even) {
+    min-height: 0;
+    padding: 28px 0;
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 16px;
+    border-right: 0;
+  }
+
+  .experience-entry__achievements p {
+    font-size: 13px;
+    line-height: 1.75;
+    text-align: left;
+  }
+
+  .experience-entry__footer {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+  }
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="个人主页：专业技能、实习经历与项目实践。"
+    />
+    <title>gsy｜个人主页</title>
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/hero.css" />
+    <link rel="stylesheet" href="./styles/skills.css" />
+    <link rel="stylesheet" href="./styles/experience.css" />
+    <link rel="stylesheet" href="./styles/projects.css" />
+    <link rel="stylesheet" href="./styles/closing.css" />
+  </head>
+  <body>
+    <div class="cursor-ring" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+
+    <!-- @include components/top-note.html -->
+    <!-- @include components/header.html -->
+
+    <main id="top">
+      <!-- @include sections/hero.html -->
+
+      <section class="explore" id="explore" aria-label="个人能力与经历">
+        <!-- @include sections/skills.html -->
+        <!-- @include sections/experience.html -->
+        <!-- @include sections/projects.html -->
+      </section>
+
+      <!-- @include sections/closing.html -->
+    </main>
+
+    <!-- @include components/footer.html -->
+
+    <script defer src="./scripts/galaxy.js"></script>
+    <script defer src="./scripts/header.js"></script>
+    <script defer src="./scripts/reveal.js"></script>
+    <script defer src="./scripts/cursor.js"></script>
+    <script defer src="./scripts/skills.js"></script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__deep-space" aria-hidden="true">
+          <canvas class="galaxy-canvas"></canvas>
+        </div>
+
+        <div class="hero__copy reveal">
+          <p class="eyebrow hero__role">
+            <span></span>
+            <strong>全栈开发</strong>
+            <b aria-hidden="true">×</b>
+            <strong>AI 应用开发</strong>
+          </p>
+          <h1 id="hero-title">拥抱变化。</h1>
+          <p class="hero__intro">
+            没有人可以回到过去重新开始，<br />
+            但每个人都可以从现在开始，创造全新的结局。
+          </p>
+          <div class="hero__actions">
+            <a class="button button--dark magnetic" href="#explore">
+              开始了解 <span aria-hidden="true">↘</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal" aria-hidden="true">
+          <div class="signal-field">
+            <svg viewBox="0 0 620 620" role="presentation">
+              <defs>
+                <linearGradient id="galaxyGradient" x1="70" y1="240" x2="550" y2="400">
+                  <stop offset="0%" stop-color="#29b6ff" />
+                  <stop offset="35%" stop-color="#2477ff" />
+                  <stop offset="51%" stop-color="#f2d76e" />
+                  <stop offset="67%" stop-color="#3e8fff" />
+                  <stop offset="100%" stop-color="#62c9ff" />
+                </linearGradient>
+                <filter id="blueGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="16" result="blur" />
+                  <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                </filter>
+                <filter id="starGlow" x="-100%" y="-100%" width="300%" height="300%">
+                  <feGaussianBlur stdDeviation="4" result="blur" />
+                  <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                </filter>
+                <symbol id="trackStar" viewBox="0 0 24 24">
+                  <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" />
+                </symbol>
+              </defs>
+
+              <g class="cosmic-haze">
+                <circle cx="141" cy="158" r="96" />
+                <circle cx="497" cy="451" r="112" />
+                <ellipse cx="322" cy="302" rx="270" ry="190" />
+              </g>
+
+              <g class="star-field">
+                <circle cx="78" cy="106" r="2" />
+                <circle cx="172" cy="78" r="3" class="star--blue" />
+                <circle cx="270" cy="118" r="1.5" />
+                <circle cx="393" cy="83" r="2" />
+                <circle cx="518" cy="140" r="2.5" class="star--gold" />
+                <circle cx="557" cy="268" r="1.6" />
+                <circle cx="92" cy="414" r="2" class="star--gold" />
+                <circle cx="174" cy="513" r="1.5" />
+                <circle cx="332" cy="532" r="2.2" class="star--blue" />
+                <circle cx="487" cy="521" r="1.8" />
+                <path d="M458 118V142M446 130H470" class="star-cross" />
+                <path d="M130 474V492M121 483H139" class="star-cross star-cross--small" />
+                <path d="M342 168V200M326 184H358" class="star-cross star-cross--gold" />
+              </g>
+
+              <g class="galaxy-interactive">
+                <path
+                  class="galaxy-hit"
+                  d="M77 316C77 190 221 166 310 310C399 454 543 430 543 304C543 178 399 170 310 310C221 450 77 442 77 316Z"
+                />
+                <g class="galaxy-art">
+                  <path
+                    class="galaxy-trail galaxy-trail--glow"
+                    d="M77 316C77 190 221 166 310 310C399 454 543 430 543 304C543 178 399 170 310 310C221 450 77 442 77 316Z"
+                  />
+                  <path
+                    class="galaxy-trail galaxy-trail--main"
+                    d="M77 316C77 190 221 166 310 310C399 454 543 430 543 304C543 178 399 170 310 310C221 450 77 442 77 316Z"
+                  />
+                  <path
+                    class="galaxy-trail galaxy-trail--spark"
+                    d="M77 316C77 190 221 166 310 310C399 454 543 430 543 304C543 178 399 170 310 310C221 450 77 442 77 316Z"
+                  />
+
+                  <g class="track-stars">
+                    <use href="#trackStar" x="105" y="243" width="24" height="24" />
+                    <use href="#trackStar" x="188" y="211" width="16" height="16" />
+                    <use href="#trackStar" x="211" y="367" width="20" height="20" />
+                    <use href="#trackStar" x="300" y="298" width="24" height="24" class="track-star--gold" />
+                    <use href="#trackStar" x="392" y="213" width="18" height="18" />
+                    <use href="#trackStar" x="480" y="253" width="25" height="25" class="track-star--gold" />
+                    <use href="#trackStar" x="486" y="359" width="17" height="17" />
+                    <use href="#trackStar" x="382" y="397" width="22" height="22" />
+                  </g>
+
+                  <g class="cosmic-girl" transform="translate(286 184)">
+                    <path class="girl-hair" d="M13 15C13 4 21-1 31 2C39 4 43 12 40 21C45 20 49 22 52 27C46 29 39 27 36 23H15C14 21 13 18 13 15Z" />
+                    <circle class="girl-face" cx="27" cy="15" r="10" />
+                    <path class="girl-fringe" d="M17 13C20 4 31 3 37 10C31 9 27 7 24 5C23 9 21 12 17 13Z" />
+                    <circle class="girl-eye" cx="24" cy="15" r="1.2" />
+                    <circle class="girl-eye" cx="30" cy="15" r="1.2" />
+                    <path class="girl-dress" d="M18 26H35L43 53H10L18 26Z" />
+                    <path class="girl-limb" d="M17 31L5 42M36 31L47 40M20 53L18 68M33 53L35 68" />
+                    <path class="girl-shoe" d="M13 69H20M34 69H41" />
+                    <path class="girl-collar" d="M22 25L27 31L32 25" />
+                  </g>
+                </g>
+              </g>
+
+              <g class="shooting-comet">
+                <path d="M0 44L72 4" class="shooting-star" />
+                <path d="M76-4L79 1L84 4L79 7L76 12L73 7L68 4L73 1Z" class="shooting-star__head" />
+              </g>
+            </svg>
+          </div>
+        </div>
+
+      </section>
