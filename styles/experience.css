@@ -24,7 +24,7 @@
   font-size: clamp(46px, 5.2vw, 74px);
   font-weight: 500;
   line-height: 1;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.02em;
 }
 
 .experience-section__note {
@@ -101,9 +101,9 @@
   grid-row: 2;
   margin: 0;
   font-size: clamp(36px, 3.8vw, 54px);
-  font-weight: 650;
+  font-weight: 600;
   line-height: 1;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.02em;
 }
 
 .experience-entry__details {

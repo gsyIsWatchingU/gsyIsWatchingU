@@ -1,320 +1,69 @@
-        <section class="skills-showcase" id="skills" aria-labelledby="skills-title">
-          <div class="skills-showcase__heading reveal">
-            <div>
-              <p class="skills-showcase__eyebrow">CAPABILITY GRAPH / 能力图谱</p>
-              <h2 id="skills-title">专业能力，彼此连接</h2>
-            </div>
-            <p class="skills-showcase__note">
-              从领域到工程机制，<br />看见解决问题的完整路径 <span aria-hidden="true">→</span>
-            </p>
-          </div>
-
-          <div class="skills-graph reveal" data-skill-graph aria-label="AI 全栈应用研发能力图谱">
+        <section class="skills-showcase" id="skills" aria-label="专业能力">
+          <div class="skills-graph reveal" data-skill-graph aria-label="技术能力图谱：全栈开发与 Agent 工程">
             <div class="skills-graph__topline" aria-hidden="true">
-              <span>01 — CAPABILITY MAP</span>
+              <span>01 — TECHNICAL CAPABILITIES</span>
               <span>悬浮探索 · 点击锁定</span>
             </div>
 
             <svg class="skills-graph__edges" aria-hidden="true"></svg>
 
             <div class="skills-graph__nodes">
-              <button
-                class="skill-node skill-node--core"
-                type="button"
-                style="--x: 50%; --y: 49%"
-                data-node-id="core"
-                data-links="web server agent delivery"
-                data-kicker="个人定位"
-                data-description="贯通 Web 体验、Server 服务、Agent 系统与工程交付，用端到端视角完成应用研发。"
-                data-tags="全栈研发 · AI 应用 · 工程落地"
-                aria-pressed="false"
-              >
-                <span class="skill-node__eyes" aria-hidden="true">
-                  <i class="skill-node__eye"><b></b></i>
-                  <i class="skill-node__eye"><b></b></i>
-                </span>
-                <span class="skill-node__core-label">AI 全栈应用研发</span>
+              <button class="skill-node skill-node--core" type="button" style="--x: 50%; --y: 7%" data-node-id="core" data-links="fullstack agent" data-kicker="能力总览" data-description="以行业通行的能力类别组织技术栈：全栈开发覆盖应用与服务，Agent 工程覆盖模型应用、执行运行时与可靠运行机制。" data-tags="全栈开发 · Agent 工程" aria-pressed="false">
+                <span class="skill-node__eyes" aria-hidden="true"><i class="skill-node__eye"><b></b></i><i class="skill-node__eye"><b></b></i></span>
+                <span class="skill-node__core-label">技术能力</span>
               </button>
 
-              <button
-                class="skill-node skill-node--domain skill-node--web"
-                type="button"
-                style="--x: 20%; --y: 22%"
-                data-node-id="web"
-                data-group="web"
-                data-links="web-architecture web-interaction web-data"
-                data-kicker="核心能力域 · 01"
-                data-description="面向真实业务组织前端应用、数据流与复杂交互，并完成页面行为到请求链路的定位。"
-                data-tags="TypeScript · React · Vue · 微前端"
-                aria-pressed="false"
-              >Web 应用工程</button>
+              <button class="skill-node skill-node--domain skill-node--fullstack" type="button" style="--x: 25%; --y: 18%" data-node-id="fullstack" data-group="fullstack" data-links="frontend backend" data-kicker="一级能力 · 01" data-description="贯通浏览器端体验与服务端系统，从界面、状态和数据流延伸到 API、任务与系统可靠性。" data-tags="前端开发 · 后端开发" aria-pressed="false">全栈开发</button>
 
-              <button
-                class="skill-node skill-node--leaf"
-                type="button"
-                style="--x: 7%; --y: 10%"
-                data-node-id="web-architecture"
-                data-group="web"
-                data-kicker="Web / 前端架构"
-                data-description="围绕模块边界组织应用，沉淀公共能力并适配多环境，让复杂业务可以持续演进。"
-                data-tags="微前端 · 模块边界 · 公共能力复用"
-                aria-pressed="false"
-              >前端架构</button>
+              <button class="skill-node skill-node--subdomain skill-node--frontend" type="button" style="--x: 12%; --y: 29%" data-node-id="frontend" data-group="fullstack" data-links="frontend-architecture frontend-state frontend-components frontend-performance" data-kicker="全栈开发 / 前端" data-description="围绕前端应用的结构、状态、交互和体验组织可维护、可演进的产品界面。" data-tags="应用架构 · 状态与数据流 · 组件与交互 · 性能与体验" aria-pressed="false">前端开发</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 5%; --y: 39%" data-node-id="frontend-architecture" data-group="fullstack" data-kicker="前端开发 / 架构" data-description="围绕模块边界、路由和公共能力组织前端应用，让复杂业务能够持续演进。" data-tags="模块边界 · 微前端 · 公共能力复用" aria-pressed="false">应用架构</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 19%; --y: 39%" data-node-id="frontend-state" data-group="fullstack" data-kicker="前端开发 / 数据" data-description="使用类型约束、请求封装和状态管理建立清晰、可预测的数据流。" data-tags="TypeScript · 请求层 · 状态管理" aria-pressed="false">状态与数据流</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 5%; --y: 49%" data-node-id="frontend-components" data-group="fullstack" data-kicker="前端开发 / 交互" data-description="构建公共组件、复杂业务模块和数据看板，兼顾交互质量与复用效率。" data-tags="React · Vue · 组件设计 · 数据看板" aria-pressed="false">组件与交互</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 19%; --y: 49%" data-node-id="frontend-performance" data-group="fullstack" data-kicker="前端开发 / 体验" data-description="关注加载、渲染、反馈和异常体验，用可度量的方式持续改善页面表现。" data-tags="加载性能 · 渲染性能 · 用户体验" aria-pressed="false">性能与体验</button>
 
-              <button
-                class="skill-node skill-node--leaf"
-                type="button"
-                style="--x: 6%; --y: 30%"
-                data-node-id="web-interaction"
-                data-group="web"
-                data-kicker="Web / 组件与交互"
-                data-description="构建公共组件、复杂业务模块和数据看板，在体验细节与复用效率之间取得平衡。"
-                data-tags="React · Vue · 公共组件 · 数据看板"
-                aria-pressed="false"
-              >组件与交互</button>
+              <button class="skill-node skill-node--subdomain skill-node--backend" type="button" style="--x: 37%; --y: 29%" data-node-id="backend" data-group="fullstack" data-links="backend-api backend-data backend-concurrency backend-reliability" data-kicker="全栈开发 / 后端" data-description="从服务边界、数据访问到并发任务和异常恢复，构建稳定、可联调的服务端能力。" data-tags="API · 数据一致性 · 异步任务 · 可靠性" aria-pressed="false">后端开发</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 30%; --y: 39%" data-node-id="backend-api" data-group="fullstack" data-kicker="后端开发 / 服务" data-description="以清晰的职责边界和输入输出契约完成 API 设计、服务通信与业务编排。" data-tags="Go · Node.js · HTTP/RPC · IDL" aria-pressed="false">API 与服务设计</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 43%; --y: 39%" data-node-id="backend-data" data-group="fullstack" data-kicker="后端开发 / 数据" data-description="围绕数据模型、事务和缓存组织访问路径，维护业务状态的一致性。" data-tags="MySQL · PostgreSQL · SQL · 事务" aria-pressed="false">数据访问与一致性</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 30%; --y: 49%" data-node-id="backend-concurrency" data-group="fullstack" data-kicker="后端开发 / 任务" data-description="通过任务编排、并发控制和异步处理提高吞吐，同时保持流程可控。" data-tags="并发控制 · 异步任务 · 任务调度" aria-pressed="false">并发与异步任务</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 43%; --y: 49%" data-node-id="backend-reliability" data-group="fullstack" data-kicker="后端开发 / 稳定性" data-description="通过超时、重试、降级、幂等和异常恢复保障关键业务流程稳定运行。" data-tags="超时 · 重试 · 幂等 · 异常恢复" aria-pressed="false">系统可靠性</button>
 
-              <button
-                class="skill-node skill-node--leaf"
-                type="button"
-                style="--x: 22%; --y: 40%"
-                data-node-id="web-data"
-                data-group="web"
-                data-kicker="Web / 状态与质量"
-                data-description="以类型约束、请求封装和异常处理管理页面状态，并联合 Console 与 Network 排查问题。"
-                data-tags="TypeScript · 请求层 · 状态管理 · Network"
-                aria-pressed="false"
-              >状态与数据流</button>
+              <button class="skill-node skill-node--domain skill-node--agent" type="button" style="--x: 75%; --y: 18%" data-node-id="agent" data-group="agent" data-links="llm runtime harness" data-kicker="一级能力 · 02" data-description="从模型上下文与输出，到任务执行运行时，再到面向真实环境的持久化、恢复、权限和观测。" data-tags="LLM 应用 · Agent Runtime · Harness" aria-pressed="false">Agent 工程</button>
 
-              <button
-                class="skill-node skill-node--domain skill-node--server"
-                type="button"
-                style="--x: 80%; --y: 21%"
-                data-node-id="server"
-                data-group="server"
-                data-links="server-architecture server-communication server-data server-reliability"
-                data-kicker="核心能力域 · 02"
-                data-description="从接口契约、业务编排到数据持久化，构建可联调、可恢复、可定位的服务端能力。"
-                data-tags="Go · Node.js · HTTP/RPC · SQL"
-                aria-pressed="false"
-              >Server 服务工程</button>
+              <button class="skill-node skill-node--subdomain skill-node--llm" type="button" style="--x: 57%; --y: 29%" data-node-id="llm" data-group="agent" data-links="llm-prompt llm-context llm-rag llm-structured" data-kicker="Agent 工程 / 模型应用" data-description="为模型提供清晰的任务指令、上下文、外部知识和输出约束，获得可用结果。" data-tags="Prompt · Context Engineering · RAG · Structured Output" aria-pressed="false">LLM 应用</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 57%; --y: 38%" data-node-id="llm-prompt" data-group="agent" data-kicker="LLM 应用 / 指令" data-description="设计明确的目标、边界、步骤和验收条件，稳定模型的任务行为。" data-tags="Prompt" aria-pressed="false">Prompt</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 57%; --y: 44%" data-node-id="llm-context" data-group="agent" data-kicker="LLM 应用 / 上下文" data-description="选择、组织和压缩任务上下文，让模型在有限窗口内获得恰当信息。" data-tags="Context Engineering" aria-pressed="false">Context Engineering</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 57%; --y: 50%" data-node-id="llm-rag" data-group="agent" data-kicker="LLM 应用 / 知识" data-description="检索并注入外部知识，使回答能够基于相关、可追溯的信息。" data-tags="RAG · Embedding · Retrieval" aria-pressed="false">RAG</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 57%; --y: 56%" data-node-id="llm-structured" data-group="agent" data-kicker="LLM 应用 / 输出" data-description="用 Schema 约束模型输出，使结果能够被程序稳定解析、验证和消费。" data-tags="Structured Output · Schema · Validation" aria-pressed="false">Structured Output</button>
 
-              <button
-                class="skill-node skill-node--leaf"
-                type="button"
-                style="--x: 69%; --y: 8%"
-                data-node-id="server-architecture"
-                data-group="server"
-                data-kicker="Server / 服务架构"
-                data-description="通过分层、职责和模块边界拆解业务流程，使接口与内部实现保持清晰。"
-                data-tags="模块边界 · 分层职责 · 业务流程编排"
-                aria-pressed="false"
-              >服务架构</button>
+              <button class="skill-node skill-node--subdomain skill-node--runtime" type="button" style="--x: 75%; --y: 29%" data-node-id="runtime" data-group="agent" data-links="runtime-tools runtime-loop runtime-workflow runtime-state runtime-human" data-kicker="Agent 工程 / 执行" data-description="组织模型决策、工具调用、任务循环、工作流和运行状态，让 Agent 真正执行任务。" data-tags="Tool Calling · Agent Loop · Workflow / Planning · State · Human-in-the-loop" aria-pressed="false">Agent Runtime</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 75%; --y: 37%" data-node-id="runtime-tools" data-group="agent" data-kicker="Agent Runtime / 工具" data-description="把外部系统和确定性能力封装为模型可选择、程序可验证的工具。" data-tags="Tool Calling · MCP · Tool Schema" aria-pressed="false">Tool Calling</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 75%; --y: 42%" data-node-id="runtime-loop" data-group="agent" data-kicker="Agent Runtime / 循环" data-description="在观察、决策、行动和反馈之间建立可终止、可校验的执行循环。" data-tags="Agent Loop" aria-pressed="false">Agent Loop</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 75%; --y: 47%" data-node-id="runtime-workflow" data-group="agent" data-kicker="Agent Runtime / 编排" data-description="将复杂目标拆解为计划和工作流，在动态决策与确定性执行之间取得平衡。" data-tags="Workflow · Planning · Routing" aria-pressed="false">Workflow / Planning</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 75%; --y: 52%" data-node-id="runtime-state" data-group="agent" data-kicker="Agent Runtime / 状态" data-description="维护任务、会话和步骤状态，为多轮执行与流程控制提供基础。" data-tags="State · Session · Task" aria-pressed="false">State</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 75%; --y: 57%" data-node-id="runtime-human" data-group="agent" data-kicker="Agent Runtime / 人机协作" data-description="在高风险或高不确定性节点引入人工确认、补充信息和结果校验。" data-tags="Human-in-the-loop · Approval" aria-pressed="false">Human-in-the-loop</button>
 
-              <button
-                class="skill-node skill-node--leaf"
-                type="button"
-                style="--x: 92%; --y: 10%"
-                data-node-id="server-communication"
-                data-group="server"
-                data-kicker="Server / 通信与集成"
-                data-description="使用明确的输入输出契约完成服务通信和跨系统集成，降低协作与联调成本。"
-                data-tags="HTTP API · RPC · Thrift / IDL"
-                aria-pressed="false"
-              >通信与集成</button>
+              <button class="skill-node skill-node--subdomain skill-node--harness" type="button" style="--x: 92%; --y: 29%" data-node-id="harness" data-group="agent" data-links="harness-persistence harness-checkpoint harness-idempotency harness-recovery harness-permission harness-observability" data-kicker="Agent 工程 / 可靠运行" data-description="包裹并约束 Agent 的运行过程，让长任务在真实工程环境中可持续、可恢复、可治理。" data-tags="Persistence · Checkpoint · Idempotency · Recovery · Permission · Observability" aria-pressed="false">Harness</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 92%; --y: 35%" data-node-id="harness-persistence" data-group="agent" data-kicker="Harness / 持久化" data-description="持久保存任务、会话和执行结果，使长任务能够跨进程和跨时间运行。" data-tags="Persistence" aria-pressed="false">Persistence</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 92%; --y: 39.5%" data-node-id="harness-checkpoint" data-group="agent" data-kicker="Harness / 检查点" data-description="记录稳定的执行检查点，为暂停、续跑和失败回退提供边界。" data-tags="Checkpoint" aria-pressed="false">Checkpoint</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 92%; --y: 44%" data-node-id="harness-idempotency" data-group="agent" data-kicker="Harness / 幂等" data-description="识别重复事件和动作，避免重试或恢复过程产生重复副作用。" data-tags="Idempotency · Event Deduplication" aria-pressed="false">Idempotency</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 92%; --y: 48.5%" data-node-id="harness-recovery" data-group="agent" data-kicker="Harness / 恢复" data-description="在失败、中断或依赖异常后恢复执行，并保留清晰的错误边界。" data-tags="Recovery · Retry · Resume" aria-pressed="false">Recovery</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 92%; --y: 53%" data-node-id="harness-permission" data-group="agent" data-kicker="Harness / 权限" data-description="对工具、数据和高风险动作设置最小权限、审批门禁与审计记录。" data-tags="Permission · Approval · Audit" aria-pressed="false">Permission</button>
+              <button class="skill-node skill-node--leaf" type="button" style="--x: 92%; --y: 57.5%" data-node-id="harness-observability" data-group="agent" data-kicker="Harness / 观测" data-description="记录 Trace、步骤、工具调用和结果指标，使执行过程可定位、可评估。" data-tags="Observability · Trace · Metrics" aria-pressed="false">Observability</button>
 
-              <button
-                class="skill-node skill-node--leaf"
-                type="button"
-                style="--x: 94%; --y: 30%"
-                data-node-id="server-data"
-                data-group="server"
-                data-kicker="Server / 数据持久化"
-                data-description="围绕关系型数据设计、查询与问题定位，让业务状态具备可靠的数据支撑。"
-                data-tags="MySQL · PostgreSQL · SQL · 数据模型"
-                aria-pressed="false"
-              >数据持久化</button>
+              <div class="skills-graph__band-label" style="--y: 68%" aria-hidden="true"><span>通用工程能力</span></div>
 
-              <button
-                class="skill-node skill-node--leaf"
-                type="button"
-                style="--x: 79%; --y: 40%"
-                data-node-id="server-reliability"
-                data-group="server"
-                data-kicker="Server / 任务与可靠性"
-                data-description="关注任务调度、并发控制、状态一致性与异常恢复，保障关键流程稳定运行。"
-                data-tags="任务调度 · 并发控制 · 幂等 · 异常恢复"
-                aria-pressed="false"
-              >任务与可靠性</button>
+              <button class="skill-node skill-node--bridge" type="button" style="--x: 7%; --y: 76%" data-node-id="general-contract" data-links="frontend-state backend-api llm-structured runtime-tools" data-kicker="通用工程能力 / 契约" data-description="从前端请求、服务 API 到模型输出和工具 Schema，都依赖明确、稳定、可验证的约定。" data-tags="接口 · IDL · Schema · Validation" aria-pressed="false">接口与契约</button>
+              <button class="skill-node skill-node--bridge" type="button" style="--x: 22%; --y: 76%" data-node-id="general-state" data-links="frontend-state backend-data runtime-state harness-checkpoint harness-idempotency" data-kicker="通用工程能力 / 状态" data-description="统一理解页面、服务和 Agent 状态，并通过事务、检查点与幂等维护一致性。" data-tags="状态 · 事务 · Checkpoint · 幂等" aria-pressed="false">状态与一致性</button>
+              <button class="skill-node skill-node--bridge" type="button" style="--x: 37%; --y: 76%" data-node-id="general-reliability" data-links="backend-reliability runtime-loop harness-idempotency harness-recovery" data-kicker="通用工程能力 / 稳定性" data-description="用超时、重试、幂等、恢复和执行边界保障跨端、跨服务、跨步骤流程。" data-tags="可靠性 · 重试 · 幂等 · 恢复" aria-pressed="false">可靠性</button>
+              <button class="skill-node skill-node--bridge" type="button" style="--x: 52%; --y: 76%" data-node-id="general-security" data-links="backend-api runtime-human harness-permission" data-kicker="通用工程能力 / 治理" data-description="通过身份、授权、最小权限、人工审批和审计约束系统行动边界。" data-tags="安全 · 权限 · 审批 · 审计" aria-pressed="false">安全与权限</button>
+              <button class="skill-node skill-node--bridge" type="button" style="--x: 66%; --y: 76%" data-node-id="general-performance" data-links="frontend-performance backend-concurrency llm-context" data-kicker="通用工程能力 / 效率" data-description="在界面响应、服务吞吐和上下文成本之间持续测量、定位和优化。" data-tags="性能 · 吞吐 · 延迟 · Token 成本" aria-pressed="false">性能</button>
+              <button class="skill-node skill-node--bridge" type="button" style="--x: 80%; --y: 76%" data-node-id="general-observability" data-links="frontend-performance backend-reliability harness-observability" data-kicker="通用工程能力 / 观测" data-description="联合页面指标、服务日志和 Agent Trace 建立端到端问题定位证据链。" data-tags="Metrics · Logs · Trace · 结果验证" aria-pressed="false">可观测性</button>
+              <button class="skill-node skill-node--bridge" type="button" style="--x: 93%; --y: 76%" data-node-id="general-testing" data-links="frontend-components backend-api llm-structured runtime-tools harness-recovery" data-kicker="通用工程能力 / 验证" data-description="覆盖单元、集成、端到端和 Agent 行为评估，用证据验证修改结果。" data-tags="Unit · Integration · E2E · Eval" aria-pressed="false">测试</button>
 
-              <button
-                class="skill-node skill-node--domain skill-node--agent"
-                type="button"
-                style="--x: 80%; --y: 77%"
-                data-node-id="agent"
-                data-group="agent"
-                data-links="agent-design agent-flow agent-tools agent-lifecycle"
-                data-kicker="核心能力域 · 03"
-                data-description="将模型决策与确定性程序结合，完成 Agent 的设计、工具集成、执行编排和长期任务治理。"
-                data-tags="RAG · Tool Calling · MCP · Workflow"
-                aria-pressed="false"
-              >AI / Agent 应用工程</button>
-
-              <button
-                class="skill-node skill-node--leaf"
-                type="button"
-                style="--x: 94%; --y: 61%"
-                data-node-id="agent-design"
-                data-group="agent"
-                data-kicker="Agent / LLM 应用设计"
-                data-description="设计清晰的指令、上下文和结构化输出，并通过知识增强提升任务完成质量。"
-                data-tags="Prompt · Context · Structured Output · RAG"
-                aria-pressed="false"
-              >LLM 应用设计</button>
-
-              <button
-                class="skill-node skill-node--leaf"
-                type="button"
-                style="--x: 94%; --y: 84%"
-                data-node-id="agent-flow"
-                data-group="agent"
-                data-kicker="Agent / 执行编排"
-                data-description="围绕 Agent Loop 和 Workflow 拆分决策与执行，组织多 Agent 路由与协作。"
-                data-tags="Agent Loop · Workflow · 多 Agent 协作"
-                aria-pressed="false"
-              >Agent 执行编排</button>
-
-              <button
-                class="skill-node skill-node--leaf"
-                type="button"
-                style="--x: 75%; --y: 92%"
-                data-node-id="agent-tools"
-                data-group="agent"
-                data-kicker="Agent / 工具与环境"
-                data-description="把数据库、日志、代码与浏览器能力封装为可验证的工具，扩展 Agent 的行动边界。"
-                data-tags="Tool Calling · MCP · Skill · 环境集成"
-                aria-pressed="false"
-              >工具与环境</button>
-
-              <button
-                class="skill-node skill-node--leaf"
-                type="button"
-                style="--x: 64%; --y: 82%"
-                data-node-id="agent-lifecycle"
-                data-group="agent"
-                data-kicker="Agent / Harness 生命周期"
-                data-description="管理任务、会话和 Checkpoint 状态，支持长任务续跑、权限门禁、执行审计与故障恢复。"
-                data-tags="Agent Harness · Checkpoint · 审批 · 审计"
-                aria-pressed="false"
-              >Harness 生命周期</button>
-
-              <button
-                class="skill-node skill-node--domain skill-node--delivery"
-                type="button"
-                style="--x: 20%; --y: 78%"
-                data-node-id="delivery"
-                data-group="delivery"
-                data-links="delivery-plan delivery-integration delivery-troubleshooting"
-                data-kicker="核心能力域 · 04"
-                data-description="把需求拆解、跨端联调、验证排障和上线反馈串成闭环，让方案真正产生结果。"
-                data-tags="方案设计 · 联调验证 · 上线交付"
-                aria-pressed="false"
-              >工程交付与质量</button>
-
-              <button
-                class="skill-node skill-node--leaf"
-                type="button"
-                style="--x: 7%; --y: 61%"
-                data-node-id="delivery-plan"
-                data-group="delivery"
-                data-kicker="交付 / 需求与方案"
-                data-description="从业务问题出发拆解模块、接口与数据流，形成能够实施和验证的工程方案。"
-                data-tags="问题拆解 · 模块设计 · 接口设计"
-                aria-pressed="false"
-              >需求与方案</button>
-
-              <button
-                class="skill-node skill-node--leaf"
-                type="button"
-                style="--x: 6%; --y: 86%"
-                data-node-id="delivery-integration"
-                data-group="delivery"
-                data-kicker="交付 / 集成与验证"
-                data-description="完成前后端与跨服务联调，覆盖核心流程、异常场景以及修改前后的结果对比。"
-                data-tags="前后端联调 · 跨服务联调 · 流程验证"
-                aria-pressed="false"
-              >集成与验证</button>
-
-              <button
-                class="skill-node skill-node--leaf"
-                type="button"
-                style="--x: 34%; --y: 91%"
-                data-node-id="delivery-troubleshooting"
-                data-group="delivery"
-                data-kicker="交付 / 线上排障"
-                data-description="联合页面、Network、服务日志、数据库、代码和发布环境建立完整证据链。"
-                data-tags="页面 · 日志 · 数据库 · 代码 · 发布环境"
-                aria-pressed="false"
-              >线上排障</button>
-
-              <button
-                class="skill-node skill-node--bridge"
-                type="button"
-                style="--x: 32%; --y: 32%"
-                data-node-id="bridge-module"
-                data-links="web-architecture server-architecture agent-tools"
-                data-kicker="跨域连接 · 模块化"
-                data-description="从微前端应用拆分、Server 模块边界到 Agent 与 Skill 职责划分，建立一致的模块化思维。"
-                data-tags="Web ↔ Server ↔ Agent"
-                aria-pressed="false"
-              >模块边界</button>
-
-              <button
-                class="skill-node skill-node--bridge"
-                type="button"
-                style="--x: 68%; --y: 32%"
-                data-node-id="bridge-contract"
-                data-links="web-data server-communication agent-tools"
-                data-kicker="跨域连接 · 契约"
-                data-description="请求层、HTTP/RPC/IDL 与 Tool Schema 都依赖明确、稳定、可验证的输入输出约定。"
-                data-tags="请求层 ↔ API / IDL ↔ Tool Schema"
-                aria-pressed="false"
-              >接口契约</button>
-
-              <button
-                class="skill-node skill-node--bridge"
-                type="button"
-                style="--x: 31%; --y: 57%"
-                data-node-id="bridge-state"
-                data-links="web-data server-reliability agent-lifecycle"
-                data-kicker="跨域连接 · 状态"
-                data-description="统一理解页面状态、服务端任务状态与 Agent Context / Checkpoint 的完整生命周期。"
-                data-tags="页面状态 ↔ 任务状态 ↔ Checkpoint"
-                aria-pressed="false"
-              >状态管理</button>
-
-              <button
-                class="skill-node skill-node--bridge"
-                type="button"
-                style="--x: 69%; --y: 57%"
-                data-node-id="bridge-reliability"
-                data-links="web-data server-reliability agent-lifecycle"
-                data-kicker="跨域连接 · 稳定性"
-                data-description="把前端异常反馈、服务并发与恢复、Agent 长任务续跑和人工审批放在同一可靠性框架中。"
-                data-tags="异常反馈 ↔ 状态恢复 ↔ 人工审批"
-                aria-pressed="false"
-              >可靠性</button>
-
-              <button
-                class="skill-node skill-node--bridge"
-                type="button"
-                style="--x: 50%; --y: 72%"
-                data-node-id="bridge-observe"
-                data-links="web-data server-data agent-tools delivery-troubleshooting"
-                data-kicker="跨域连接 · 可观测性"
-                data-description="将埋点、Console、Network、日志、数据库与 Agent Trace 组合成端到端问题定位证据链。"
-                data-tags="埋点 ↔ 日志 ↔ Trace ↔ 结果验证"
-                aria-pressed="false"
-              >可观测性</button>
+              <div class="skills-graph__band-label" style="--y: 86%" aria-hidden="true"><span>研发流程</span></div>
+              <div class="skills-graph__process" aria-label="研发流程：需求分析、技术设计、开发、联调、测试、发布、监控排障">
+                <span>需求分析</span><i aria-hidden="true">→</i><span>技术设计</span><i aria-hidden="true">→</i><span>开发</span><i aria-hidden="true">→</i><span>联调</span><i aria-hidden="true">→</i><span>测试</span><i aria-hidden="true">→</i><span>发布</span><i aria-hidden="true">→</i><span>监控排障</span>
+              </div>
             </div>
 
             <aside class="skill-tooltip" data-skill-tooltip aria-live="polite" aria-hidden="true">
@@ -326,7 +75,7 @@
             </aside>
 
             <div class="skills-graph__footer" aria-hidden="true">
-              <span>领域 → 子能力 → 工程机制 → 实践证据</span>
+              <span>能力类别 → 工程概念 → 技术实践</span>
               <span>ESC 取消锁定</span>
             </div>
           </div>

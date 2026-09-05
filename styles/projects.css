@@ -38,13 +38,13 @@
 }
 
 .profile-card__number {
-  font: 500 clamp(32px, 3vw, 48px)/1 ui-monospace, monospace;
+  font: 500 clamp(32px, 3vw, 48px)/1 var(--font-mono);
 }
 
 .profile-card__meta {
   margin: 0 0 36px;
   color: var(--muted);
-  font: 600 9px/1.4 ui-monospace, monospace;
+  font: 600 9px/1.4 var(--font-mono);
   letter-spacing: 0.14em;
   transition: color 350ms ease;
 }
@@ -59,7 +59,7 @@
   font-size: clamp(42px, 5.4vw, 78px);
   font-weight: 500;
   line-height: 1;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.02em;
 }
 
 .profile-card__body > p:nth-child(3) {

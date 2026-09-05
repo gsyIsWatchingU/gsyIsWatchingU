@@ -10,9 +10,9 @@
   --cream: #d9cfae;
   --page-x: clamp(22px, 4vw, 64px);
   --section-gap: clamp(48px, 6vw, 88px);
-  --font-body: Inter, "Noto Sans SC", "PingFang SC", "Microsoft YaHei UI", "Microsoft YaHei", system-ui, sans-serif;
-  --font-display: "Noto Serif SC", "Source Han Serif SC", "Songti SC", STSong, SimSun, serif;
-  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --font-body: "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+  --font-display: var(--font-body);
+  --font-mono: var(--font-body);
 }
 
 * {
@@ -56,7 +56,7 @@ a,
   gap: 10px;
   margin: 0 0 28px;
   color: var(--muted);
-  font: 600 10px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
+  font: 600 10px/1.4 var(--font-mono);
   letter-spacing: 0.15em;
 }
 

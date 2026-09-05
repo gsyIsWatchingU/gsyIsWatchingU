@@ -57,7 +57,7 @@
     svg.replaceChildren();
     edgeGroups.length = 0;
 
-    if (window.matchMedia("(max-width: 700px)").matches) return;
+    if (window.matchMedia("(max-width: 980px)").matches) return;
 
     const layerBounds = nodeLayer.getBoundingClientRect();
     svg.setAttribute("viewBox", `0 0 ${layerBounds.width} ${layerBounds.height}`);
@@ -91,7 +91,7 @@
   };
 
   const positionTooltip = (node) => {
-    if (window.matchMedia("(max-width: 700px)").matches) return;
+    if (window.matchMedia("(max-width: 980px)").matches) return;
 
     const graphBounds = graph.getBoundingClientRect();
     const nodeBounds = node.getBoundingClientRect();

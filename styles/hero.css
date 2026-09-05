@@ -82,7 +82,7 @@
   font-size: clamp(76px, 7.8vw, 126px);
   font-weight: 600;
   line-height: 1.04;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.02em;
   font-variation-settings: "wght" 600;
 }
 
@@ -90,7 +90,7 @@
   display: inline-block;
   margin-top: 0.12em;
   font-size: 0.68em;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.02em;
 }
 
 .hero__intro {
