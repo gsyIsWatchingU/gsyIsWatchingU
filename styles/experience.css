@@ -232,6 +232,10 @@
   gap: 6px;
 }
 
+.experience-entry__tags--single-line {
+  flex-wrap: nowrap;
+}
+
 .experience-entry__tags span {
   padding: 6px 9px;
   border: 1px solid rgba(13, 13, 12, 0.18);
@@ -366,6 +370,10 @@
   .experience-entry__tags {
     margin-top: 14px;
     gap: 6px;
+  }
+
+  .experience-entry__tags--single-line {
+    flex-wrap: wrap;
   }
 
   .experience-entry__tags span {
