@@ -21,7 +21,7 @@
 - Agent 经历已补充分配、催办、统计等全生命周期能力，以及长任务上下文、消息一致性和根因排查等技术难点标签。
 - Agent 工程技术难点标签已精简文案，并在桌面端保持同一行展示。
 - 实习经历第 03 项已重构为平台稳定性专项，突出 AI Live 开播工作台与 Seller Center 两大平台的问题盘点、优先级和依赖评估及需求排期；改动涉及六个代码仓库，并覆盖前后端和数据库的 40+ 项问题修复上线。
-- 业务数据已融入成果描述并强化展示，Smart Video 口径更新为上线 `20` 天累计获得 `1.2W+ PV`，技术标签聚焦微前端架构、React / TypeScript、Jotai 状态管理、国际化及数据埋点与看板。
+- 业务数据已融入成果描述并强化展示，Smart Video 口径更新为上线 `20` 天累计获得 `1.2W+ PV`，技术标签聚焦微前端架构、Monorepo、React / TypeScript、Jotai 状态管理、国际化及数据埋点与看板。
 - 专业技能图谱已重构为“全栈开发 × Agent 工程”中心节点与八个工程能力节点，突出两条主线。
 - 全栈方向覆盖产品交互、浏览器与 Web、后端数据、架构、安全可靠性、交付运维；Agent 方向覆盖 Agent 开发与运行时。
 - 网状图已采用中心辐射线、外围曲线与按需显示的跨域关系线，减少视觉交叉和信息拥挤。
@@ -48,6 +48,7 @@
 
 ## 验证结果
 
+- 2026-09-06：Smart Video 技术标签新增 Monorepo；`npm run build`、`npm run check`、`git diff --check` 通过。
 - 2026-09-06：Smart Video 技术标签已统一为外部可理解的架构、技术栈与工程能力表达；`npm run build`、`npm run check`、`git diff --check` 通过。
 - 2026-09-06：Smart Video 已突出上线 20 天累计获得 `1.2W+ PV`，并补齐 5 项技术标签；`npm run build`、`npm run check`、`git diff --check` 通过。
 - 2026-09-06：Agent 工程技术难点标签已精简并调整为桌面端单行展示；`npm run build`、`npm run check`、`git diff --check` 通过。
