@@ -9,7 +9,7 @@
   --green: #88ae83;
   --cream: #d9cfae;
   --page-x: clamp(22px, 4vw, 64px);
-  --section-gap: clamp(48px, 6vw, 88px);
+  --section-gap: clamp(44px, 5vw, 72px);
   --font-body: "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
   --font-display: var(--font-body);
   --font-mono: var(--font-body);

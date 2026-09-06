@@ -4,8 +4,8 @@
 
 .profile-card {
   position: relative;
-  min-height: 310px;
-  padding: 45px 0;
+  min-height: 260px;
+  padding: 36px 0;
   display: grid;
   grid-template-columns: 0.48fr 1.2fr 0.52fr;
   gap: 40px;
@@ -38,11 +38,11 @@
 }
 
 .profile-card__number {
-  font: 500 clamp(32px, 3vw, 48px)/1 var(--font-mono);
+  font: 500 clamp(24px, 2.1vw, 32px)/1 var(--font-mono);
 }
 
 .profile-card__meta {
-  margin: 0 0 36px;
+  margin: 0 0 24px;
   color: var(--muted);
   font: 600 9px/1.4 var(--font-mono);
   letter-spacing: 0.14em;
@@ -56,7 +56,7 @@
 
 .profile-card h3 {
   margin: 0;
-  font-size: clamp(42px, 5.4vw, 78px);
+  font-size: clamp(28px, 3.3vw, 42px);
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.02em;
@@ -64,7 +64,7 @@
 
 .profile-card__body > p:nth-child(3) {
   max-width: 600px;
-  margin: 28px 0 0;
+  margin: 20px 0 0;
   color: var(--muted);
   line-height: 1.75;
   transition: color 350ms ease;
@@ -76,7 +76,7 @@
 }
 
 .tag-row {
-  margin-top: 27px;
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -131,7 +131,7 @@
 
 @media (max-width: 680px) {
   .profile-card {
-    min-height: 360px;
+    min-height: 300px;
     grid-template-columns: 52px 1fr;
     gap: 18px;
   }

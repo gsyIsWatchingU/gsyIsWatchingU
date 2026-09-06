@@ -1,10 +1,11 @@
 
 .experience-section {
   padding: 0 0 var(--section-gap);
+  scroll-margin-top: 96px;
 }
 
 .experience-section__heading {
-  margin-bottom: clamp(28px, 3vw, 44px);
+  margin-bottom: clamp(22px, 2.4vw, 32px);
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -21,7 +22,7 @@
 .experience-section h2 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(46px, 5.2vw, 74px);
+  font-size: clamp(30px, 3.2vw, 44px);
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.02em;
@@ -72,7 +73,7 @@
 
 .experience-entry__header {
   min-height: 0;
-  padding: clamp(28px, 3vw, 40px) 0;
+  padding: clamp(22px, 2.4vw, 30px) 0;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
@@ -82,25 +83,26 @@
 .experience-entry__company-label {
   grid-column: 1;
   grid-row: 1;
-  margin: 0 0 8px;
+  margin: 0;
   color: var(--muted);
-  font: 600 12px/1.4 var(--font-mono);
-  letter-spacing: 0.13em;
+  font: 700 clamp(13px, 1vw, 15px)/1.3 var(--font-mono);
+  letter-spacing: 0.15em;
 }
 
 .experience-entry__identity {
   display: grid;
   grid-template-columns: max-content minmax(200px, 1fr);
   grid-template-rows: auto auto;
-  align-items: end;
-  column-gap: clamp(36px, 5vw, 80px);
+  align-items: center;
+  column-gap: clamp(24px, 3vw, 46px);
+  row-gap: 10px;
 }
 
 .experience-entry__identity h3 {
   grid-column: 1;
   grid-row: 2;
   margin: 0;
-  font-size: clamp(36px, 3.8vw, 54px);
+  font-size: clamp(24px, 2.2vw, 30px);
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.02em;
@@ -108,25 +110,28 @@
 
 .experience-entry__details {
   grid-column: 2;
-  grid-row: 1 / span 2;
-  align-self: end;
+  grid-row: 2;
+  align-self: center;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
+  flex-direction: row;
+  align-items: baseline;
+  gap: clamp(14px, 2vw, 28px);
 }
 
 .experience-entry__department {
   color: var(--ink);
-  font-size: 15px;
-  font-weight: 600;
+  font-size: clamp(14px, 1.2vw, 17px);
+  font-weight: 650;
   line-height: 1.45;
+  white-space: nowrap;
 }
 
 .experience-entry__role {
   color: var(--muted);
-  font-size: 13px;
+  font-size: clamp(13px, 1.05vw, 15px);
+  font-weight: 500;
   line-height: 1.5;
+  white-space: nowrap;
 }
 
 .experience-entry time {
@@ -151,8 +156,8 @@
 
 .experience-entry__achievements li {
   min-width: 0;
-  min-height: 230px;
-  padding: clamp(26px, 2.4vw, 34px);
+  min-height: 0;
+  padding: clamp(22px, 2vw, 28px);
   display: grid;
   grid-template-columns: 42px minmax(0, 1fr);
   align-content: start;
@@ -187,8 +192,8 @@
 }
 
 .experience-entry__achievements h4 {
-  margin: 0 0 14px;
-  font-size: clamp(19px, 1.65vw, 24px);
+  margin: 0 0 10px;
+  font-size: clamp(17px, 1.35vw, 20px);
   line-height: 1.28;
 }
 
@@ -196,8 +201,8 @@
   margin: 0;
   color: var(--muted);
   font-size: 14px;
-  line-height: 1.75;
-  text-align: justify;
+  line-height: 1.65;
+  text-align: left;
   transition: color 320ms ease;
 }
 
@@ -205,8 +210,49 @@
   color: rgba(255, 255, 255, 0.68);
 }
 
+.experience-entry__metric {
+  display: inline-block;
+  margin: 0 0.08em;
+  color: var(--ink);
+  font-size: 1.15em;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  transition: color 320ms ease;
+}
+
+.experience-entry__achievements li:hover .experience-entry__metric {
+  color: var(--orange);
+}
+
+.experience-entry__tags {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.experience-entry__tags span {
+  padding: 6px 9px;
+  border: 1px solid rgba(13, 13, 12, 0.18);
+  border-radius: 999px;
+  color: #4f4e4a;
+  background: rgba(255, 255, 255, 0.42);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  transition: color 320ms ease, border-color 320ms ease, background 320ms ease;
+}
+
+.experience-entry__achievements li:hover .experience-entry__tags span {
+  color: rgba(255, 255, 255, 0.76);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+}
+
 .experience-entry__footer {
-  min-height: 54px;
+  min-height: 46px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -221,16 +267,12 @@
     grid-template-columns: minmax(0, 1fr) auto;
   }
 
-  .experience-entry__identity {
-    display: block;
-  }
-
   .experience-entry__details {
-    margin-top: 12px;
+    margin-top: 0;
   }
 
   .experience-entry__achievements li {
-    min-height: 260px;
+    min-height: 0;
     padding-left: 24px;
     padding-right: 24px;
   }
@@ -250,7 +292,7 @@
   }
 
   .experience-section__heading {
-    margin-bottom: 28px;
+    margin-bottom: 22px;
     align-items: flex-start;
     flex-direction: column;
     gap: 22px;
@@ -270,15 +312,26 @@
   }
 
   .experience-entry__identity h3 {
-    font-size: clamp(36px, 11vw, 46px);
+    grid-column: 1;
+    grid-row: 2;
+    font-size: clamp(24px, 7vw, 28px);
+  }
+
+  .experience-entry__identity {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    row-gap: 9px;
   }
 
   .experience-entry__details {
-    margin-top: 12px;
+    grid-column: 1;
+    grid-row: 3;
+    margin-top: 2px;
+    gap: 12px;
   }
 
   .experience-entry__department {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .experience-entry__role {
@@ -298,7 +351,7 @@
   .experience-entry__achievements li:nth-child(odd),
   .experience-entry__achievements li:nth-child(even) {
     min-height: 0;
-    padding: 28px 0;
+    padding: 22px 0;
     grid-template-columns: 30px minmax(0, 1fr);
     gap: 16px;
     border-right: 0;
@@ -306,8 +359,18 @@
 
   .experience-entry__achievements p {
     font-size: 13px;
-    line-height: 1.75;
+    line-height: 1.65;
     text-align: left;
+  }
+
+  .experience-entry__tags {
+    margin-top: 14px;
+    gap: 6px;
+  }
+
+  .experience-entry__tags span {
+    padding: 6px 8px;
+    font-size: 10px;
   }
 
   .experience-entry__footer {
