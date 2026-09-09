@@ -19,6 +19,8 @@
 
 留言后端位于 `backend`，使用 Cloudflare Worker 和远程 D1，配置与查询方法见 [`backend/README.md`](backend/README.md)。
 
+其他电脑通过 Tailscale SSH 外网连接 GPU 的步骤见 [`docs/gpu-external-ssh.md`](docs/gpu-external-ssh.md)。
+
 算法训练平台的全栈 MVP 方案见 [`docs/plan-list.md`](docs/plan-list.md)，功能状态和开发记录见 [`docs/feature-list.md`](docs/feature-list.md)、[`docs/work-roadmap.md`](docs/work-roadmap.md)。
 
 ```powershell

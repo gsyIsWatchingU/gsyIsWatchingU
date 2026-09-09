@@ -12,6 +12,7 @@
 
 ## 已完成
 
+- 已补充其他 Windows 电脑通过 Tailscale SSH 外网连接 GPU 的配置、验证、安全边界与故障处理说明。
 - 已在 Cloudflare APAC 区域创建线上 D1 `gsy-guestbook`，完成表结构迁移并部署 `gsy-guestbook-api` Worker；前端开发与正式环境均直接连接该线上服务。
 - 已将主页收敛为首屏星海、专业能力树、实习经历、大型项目实践四个部分。
 - 已取消独立留言板块，入口并入首屏操作按钮，留言弹幕直接经过首屏现有星海背景。
@@ -60,6 +61,7 @@
 
 ## 验证结果
 
+- 2026-09-09：新增 `docs/gpu-external-ssh.md`，记录已验证的 Tailscale 节点、客户端安装、用户授权、连接验收和安全边界。
 - 2026-09-09：完成论迹、Algorithm Lab 与 WriteHere 的个人主页集成；未添加源码入口；`npm run build`、`npm run check`、`git diff --check` 通过，桌面端与 390px 手机端产品区视觉验收通过。
 - 2026-09-08：重写专业能力区，移除横向能力网络和悬浮详情，改为“AI 全栈 → 全栈开发 / Agent 工程 → 技术分支 → 共用工程底座”的纵向树结构；`npm run build`、`npm run check` 通过。
 - 2026-09-08：修复留言弹窗进入浏览器顶层后鼠标不可见的问题；弹窗打开时使用系统鼠标，关闭后恢复自定义鼠标；`npm run build`、`npm run check` 通过。
