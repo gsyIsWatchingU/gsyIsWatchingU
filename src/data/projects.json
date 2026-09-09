@@ -1,0 +1,67 @@
+[
+  {
+    "id": "research-workbench",
+    "number": "01",
+    "tone": "forest",
+    "kicker": "AI KNOWLEDGE WORKFLOW",
+    "name": "论迹",
+    "englishName": "Research Workbench",
+    "stage": "V0.1 · GPU 演示环境",
+    "role": "独立产品设计与全栈实现",
+    "description": "面向科研阅读的私有知识工作台，把 PDF 上传、连续阅读、全文检索、划词翻译、高亮批注与 Markdown 笔记收进一个完整闭环。",
+    "proofs": [
+      { "label": "阅读定位", "text": "PDF.js 目录、全文搜索与阅读位置恢复" },
+      { "label": "证据沉淀", "text": "文本上下文与页面坐标双锚点批注" },
+      { "label": "可靠保存", "text": "笔记延迟保存与版本冲突保护" }
+    ],
+    "tech": ["React 19", "TypeScript", "FastAPI", "PDF.js", "SQLite"],
+    "image": "./assets/projects/research-workbench.png",
+    "imageAlt": "论迹登录页，展示科研阅读工作台的品牌主视觉",
+    "entryUrl": "https://elementary-von-appreciation-stretch.trycloudflare.com",
+    "entryLabel": "进入论迹"
+  },
+  {
+    "id": "algorithm-lab",
+    "number": "02",
+    "tone": "blue",
+    "kicker": "PLATFORM ENGINEERING",
+    "name": "Algorithm Lab",
+    "englishName": "全栈算法训练平台",
+    "stage": "MVP · GPU 演示环境",
+    "role": "产品架构、全栈开发与部署",
+    "description": "覆盖题库组织、在线编程、异步判题、学习进度与间隔复习，并通过公共/私人题库边界和整套审核流程处理内容治理。",
+    "proofs": [
+      { "label": "异步判题", "text": "Redis + BullMQ 解耦 Web 与判题 Worker" },
+      { "label": "运行隔离", "text": "低权限原生沙箱、资源限制与超时终止" },
+      { "label": "权限治理", "text": "私人题库隔离与公共题库整套审核" }
+    ],
+    "tech": ["Next.js 16", "Prisma", "PostgreSQL", "Redis", "BullMQ"],
+    "image": "./assets/projects/algorithm-lab.png",
+    "imageAlt": "Algorithm Lab 全部题目页面，展示题目筛选与题库信息",
+    "entryUrl": "https://forget-charges-glass-accordance.trycloudflare.com",
+    "entryLabel": "进入平台",
+    "secondaryUrl": "./playground.html",
+    "secondaryLabel": "免登录快速体验"
+  },
+  {
+    "id": "write-here",
+    "number": "03",
+    "tone": "green",
+    "kicker": "REAL-TIME COLLABORATION",
+    "name": "WriteHere",
+    "englishName": "Horizon Docs",
+    "stage": "DEMO · GPU 演示环境",
+    "role": "全栈开发与实时协作设计",
+    "description": "轻量级在线文档协作平台，覆盖个人文档、公开社区、分享链接、协作申请审批、多人实时编辑与消息通知。",
+    "proofs": [
+      { "label": "实时协同", "text": "TipTap + Yjs 同步内容、光标与在线成员" },
+      { "label": "双 WebSocket", "text": "协同编辑与业务通知使用独立通道" },
+      { "label": "权限闭环", "text": "作者、协作者和访客的读写能力一致" }
+    ],
+    "tech": ["Vue 3", "TipTap", "Yjs", "Express", "WebSocket"],
+    "image": "./assets/projects/write-here.png",
+    "imageAlt": "WriteHere 登录页，展示极简像素风格的 Horizon Docs 品牌界面",
+    "entryUrl": "https://dollar-wendy-buildings-year.trycloudflare.com",
+    "entryLabel": "进入 WriteHere"
+  }
+]

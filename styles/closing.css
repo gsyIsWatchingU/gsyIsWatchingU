@@ -49,6 +49,14 @@
   background: white;
 }
 
+.closing__actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 .closing__orb {
   position: absolute;
   right: -7vw;

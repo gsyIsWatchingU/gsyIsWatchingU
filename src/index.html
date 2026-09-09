@@ -5,9 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="个人主页：专业技能、实习经历与项目实践。"
+      content="郭书羽的个人技术主页：AI 全栈开发、Agent 应用工程、字节跳动实习经历，以及论迹、Algorithm Lab 与 WriteHere 独立产品。"
     />
-    <title>gsy｜个人主页</title>
+    <meta name="theme-color" content="#0d0d0c" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="郭书羽｜AI 全栈工程师 · Agent 应用" />
+    <meta
+      property="og:description"
+      content="从产品交互、服务与数据，到 Agent Runtime 与 Harness 的完整工程交付。"
+    />
+    <meta
+      property="og:image"
+      content="https://gsyiswatchingu.github.io/assets/gsy-logo-transparent-mark.png"
+    />
+    <link rel="canonical" href="https://gsyiswatchingu.github.io/" />
+    <title>郭书羽｜AI 全栈工程师 · Agent 应用</title>
     <link rel="icon" type="image/x-icon" href="./favicon.ico?v=20260904" />
     <link rel="shortcut icon" href="./favicon.ico?v=20260904" />
     <link
@@ -20,7 +32,20 @@
     <link rel="stylesheet" href="./styles/skills.css" />
     <link rel="stylesheet" href="./styles/experience.css" />
     <link rel="stylesheet" href="./styles/projects.css" />
-    <link rel="stylesheet" href="./styles/closing.css" />
+    <link rel="stylesheet" href="./styles/guestbook.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "郭书羽",
+        "jobTitle": "AI 全栈工程师 / Agent 应用开发",
+        "email": "mailto:gsyiswatchingu@163.com",
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "华中科技大学" },
+          { "@type": "CollegeOrUniversity", "name": "西南大学" }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div class="cursor-ring" aria-hidden="true"></div>
@@ -31,14 +56,13 @@
 
     <main id="top">
       <!-- @include sections/hero.html -->
+      <!-- @include sections/guestbook.html -->
 
       <section class="explore" id="explore" aria-label="个人能力与经历">
         <!-- @include sections/skills.html -->
         <!-- @include sections/experience.html -->
         <!-- @include sections/projects.html -->
       </section>
-
-      <!-- @include sections/closing.html -->
     </main>
 
     <!-- @include components/footer.html -->
@@ -47,6 +71,9 @@
     <script defer src="./scripts/header.js"></script>
     <script defer src="./scripts/reveal.js"></script>
     <script defer src="./scripts/cursor.js"></script>
+    <script defer src="./scripts/skill-links.js"></script>
     <script defer src="./scripts/skills.js"></script>
+    <script defer src="./scripts/guestbook-config.js"></script>
+    <script defer src="./scripts/guestbook.js"></script>
   </body>
 </html>

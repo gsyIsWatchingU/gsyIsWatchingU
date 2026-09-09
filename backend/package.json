@@ -1,0 +1,19 @@
+{
+  "name": "gsy-guestbook-api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --remote",
+    "deploy": "wrangler deploy",
+    "db:migrate:remote": "wrangler d1 migrations apply gsy-guestbook --remote",
+    "check": "node --check src/index.js"
+  },
+  "devDependencies": {
+    "wrangler": "4.86.0"
+  },
+  "overrides": {
+    "sharp": "0.35.0",
+    "undici": "7.29.0",
+    "ws": "8.21.0"
+  }
+}

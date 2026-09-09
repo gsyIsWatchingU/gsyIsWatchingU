@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="在线算法练习场：阅读题目、编写代码并运行测试用例。" />
+    <title>算法练习场｜gsyIsWatchingU</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico?v=20260904" />
+    <link rel="stylesheet" href="./styles/playground.css" />
+  </head>
+  <body>
+    <header class="practice-bar">
+      <a class="practice-brand" href="./index.html" aria-label="返回个人主页">
+        <img src="./assets/gsy-logo-transparent-mark.png" alt="" />
+        <span>算法练习场</span>
+      </a>
+      <div class="practice-nav" aria-label="题目导航">
+        <button type="button" aria-label="上一题" disabled>‹</button>
+        <strong>Hot 100</strong>
+        <button type="button" aria-label="下一题" disabled>›</button>
+      </div>
+      <div class="practice-actions">
+        <span class="practice-timer" aria-label="本次练习时长"><i></i><span id="timer">00:00</span></span>
+        <button class="action-button action-button--ghost" id="run-top" type="button">
+          <span aria-hidden="true">▶</span> 运行
+        </button>
+        <button class="action-button action-button--submit" id="submit-top" type="button">
+          <span aria-hidden="true">✓</span> 提交
+        </button>
+      </div>
+    </header>
+
+    <main class="workspace" id="workspace">
+      <section class="panel problem-panel" aria-labelledby="problem-title">
+        <div class="panel-tabs" role="tablist" aria-label="题目信息">
+          <button class="panel-tab is-active" type="button" role="tab" aria-selected="true">题目描述</button>
+          <button class="panel-tab" type="button" role="tab" aria-selected="false" disabled>题解</button>
+          <button class="panel-tab" type="button" role="tab" aria-selected="false" disabled>提交记录</button>
+        </div>
+        <article class="problem-content">
+          <div class="problem-kicker">数组 · 哈希表</div>
+          <h1 id="problem-title"><span>1.</span> 两数之和</h1>
+          <div class="problem-badges">
+            <span class="difficulty">简单</span>
+            <span>通过率 54.6%</span>
+          </div>
+
+          <p>给定一个整数数组 <code>nums</code> 和一个整数目标值 <code>target</code>，请你在该数组中找出和为目标值 <code>target</code> 的两个整数，并返回它们的数组下标。</p>
+          <p>你可以假设每种输入只会对应一个答案，并且不能重复使用同一个元素。答案可以按任意顺序返回。</p>
+
+          <section class="example-block">
+            <h2>示例 1</h2>
+            <pre><strong>输入：</strong>nums = [2, 7, 11, 15], target = 9
+<strong>输出：</strong>[0, 1]
+<strong>解释：</strong>nums[0] + nums[1] = 9</pre>
+          </section>
+          <section class="example-block">
+            <h2>示例 2</h2>
+            <pre><strong>输入：</strong>nums = [3, 2, 4], target = 6
+<strong>输出：</strong>[1, 2]</pre>
+          </section>
+          <section class="example-block">
+            <h2>示例 3</h2>
+            <pre><strong>输入：</strong>nums = [3, 3], target = 6
+<strong>输出：</strong>[0, 1]</pre>
+          </section>
+
+          <section class="constraints">
+            <h2>提示</h2>
+            <ul>
+              <li><code>2 &lt;= nums.length &lt;= 10⁴</code></li>
+              <li><code>-10⁹ &lt;= nums[i] &lt;= 10⁹</code></li>
+              <li><code>-10⁹ &lt;= target &lt;= 10⁹</code></li>
+              <li>只会存在一个有效答案</li>
+            </ul>
+          </section>
+          <aside class="follow-up"><strong>进阶：</strong>你能设计一个时间复杂度小于 O(n²) 的算法吗？</aside>
+        </article>
+        <footer class="problem-footer"><span>♡ 21.3K</span><span>💬 16K</span><span>☆ 收藏</span></footer>
+      </section>
+
+      <div class="workspace-resizer" id="workspace-resizer" role="separator" aria-orientation="vertical" aria-label="调整题目与代码区域宽度"></div>
+
+      <div class="coding-column" id="coding-column">
+        <section class="panel editor-panel" aria-labelledby="editor-heading">
+          <div class="editor-heading">
+            <h2 id="editor-heading"><span aria-hidden="true">&lt;/&gt;</span> 代码</h2>
+            <div class="editor-tools">
+              <label>
+                <span class="sr-only">编程语言</span>
+                <select id="language" aria-label="编程语言">
+                  <option value="javascript">JavaScript</option>
+                </select>
+              </label>
+              <button id="reset-code" type="button" title="重置代码">↶ <span>重置</span></button>
+            </div>
+          </div>
+          <div class="editor-shell">
+            <div id="monaco-editor" aria-label="代码编辑器"></div>
+            <textarea id="code-fallback" aria-label="代码编辑器" spellcheck="false"></textarea>
+          </div>
+          <footer class="editor-status">
+            <span id="save-status">已自动保存</span>
+            <span>JavaScript · Ctrl + Enter 运行</span>
+          </footer>
+        </section>
+
+        <div class="coding-resizer" id="coding-resizer" role="separator" aria-orientation="horizontal" aria-label="调整代码与测试区域高度"></div>
+
+        <section class="panel test-panel" aria-labelledby="test-heading">
+          <div class="test-tabs" role="tablist" aria-label="测试信息">
+            <button class="test-tab is-active" id="cases-tab" type="button" role="tab" aria-selected="true">✓ 测试用例</button>
+            <button class="test-tab" id="result-tab" type="button" role="tab" aria-selected="false">测试结果</button>
+            <span class="run-hint">运行可见用例 · 提交包含隐藏用例</span>
+          </div>
+          <div class="test-body" id="cases-panel" role="tabpanel" aria-labelledby="cases-tab">
+            <div class="case-list" role="tablist" aria-label="测试用例">
+              <button class="case-chip is-active" type="button" data-case="0">Case 1</button>
+              <button class="case-chip" type="button" data-case="1">Case 2</button>
+              <button class="case-chip" type="button" data-case="2">Case 3</button>
+            </div>
+            <div class="case-fields">
+              <label>nums<input id="case-nums" type="text" readonly /></label>
+              <label>target<input id="case-target" type="text" readonly /></label>
+            </div>
+          </div>
+          <div class="result-body" id="result-panel" role="tabpanel" aria-labelledby="result-tab" hidden>
+            <div class="result-empty" id="result-empty">
+              <span>▷</span>
+              <p>运行代码后，这里会展示测试结果</p>
+            </div>
+            <div class="result-summary" id="result-summary" hidden></div>
+            <div class="result-list" id="result-list"></div>
+          </div>
+          <div class="test-actions">
+            <button class="action-button action-button--ghost" id="run-bottom" type="button">▶ 运行</button>
+            <button class="action-button action-button--submit" id="submit-bottom" type="button">✓ 提交</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs/loader.js"></script>
+    <script defer src="./scripts/playground.js"></script>
+  </body>
+</html>

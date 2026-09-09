@@ -22,10 +22,12 @@
 html {
   scroll-behavior: smooth;
   background: var(--paper);
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
+  overflow-x: clip;
   color: var(--ink);
   background:
     radial-gradient(circle at 82% 8%, rgba(255, 255, 255, 0.85), transparent 24%),
@@ -113,6 +115,39 @@ a,
   padding: var(--section-gap) var(--page-x);
 }
 
+.portfolio-section__heading {
+  margin-bottom: clamp(28px, 3vw, 44px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.portfolio-section__eyebrow {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font: 600 10px/1.4 var(--font-mono);
+  letter-spacing: 0.15em;
+}
+
+.portfolio-section__heading h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(46px, 5.2vw, 74px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.portfolio-section__heading > p {
+  max-width: 430px;
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: right;
+}
+
 .cursor-ring,
 .cursor-dot {
   position: fixed;
@@ -189,5 +224,18 @@ a,
   .reveal {
     opacity: 1;
     transform: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .portfolio-section__heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .portfolio-section__heading > p {
+    margin: 0;
+    text-align: left;
   }
 }

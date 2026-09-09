@@ -13,8 +13,8 @@
   let ringY = -100;
 
   const renderCursor = () => {
-    ringX += (mouseX - ringX) * 0.16;
-    ringY += (mouseY - ringY) * 0.16;
+    ringX += (mouseX - ringX) * 0.32;
+    ringY += (mouseY - ringY) * 0.32;
     ring.style.left = `${ringX}px`;
     ring.style.top = `${ringY}px`;
     dot.style.left = `${mouseX}px`;

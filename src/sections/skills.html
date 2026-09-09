@@ -1,184 +1,172 @@
-        <section class="skills-showcase" id="skills" aria-label="专业能力">
-          <div class="skills-graph reveal" data-skill-graph aria-label="以全栈开发与 Agent 工程为核心的专业能力图谱">
-            <div class="skills-graph__topline" aria-hidden="true">
-              <span>01 — TECHNICAL CAPABILITIES</span>
-              <span>悬浮探索 · 点击锁定</span>
+        <section class="skills-showcase" id="skills" aria-labelledby="skills-title">
+          <header class="portfolio-section__heading reveal">
+            <div>
+              <p class="portfolio-section__eyebrow">02 / TECHNICAL CAPABILITY TREE</p>
+              <h2 id="skills-title">技术能力树</h2>
+            </div>
+            <p>以 AI 全栈为树根，沿全栈开发与 Agent 工程两条主枝，向下展开到可落地的技术能力。</p>
+          </header>
+
+          <div class="capability-tree reveal" data-capability-tree>
+            <div class="capability-tree__legend" aria-hidden="true">
+              <span>ROOT → DOMAIN → BRANCH → STACK</span>
+              <span>能力结构 / 工程实践 / 技术栈</span>
             </div>
 
-            <svg class="skills-graph__edges" aria-hidden="true"></svg>
+            <article class="capability-root">
+              <p>ROOT / 求职定位</p>
+              <h3>AI 全栈工程师</h3>
+              <span>贯通产品交互、后端服务与可靠的 Agent Harness</span>
+              <ul class="capability-tags" aria-label="核心技术方向">
+                <li>TypeScript</li>
+                <li>Go / Node.js</li>
+                <li>LLM 应用</li>
+                <li>Agent Runtime</li>
+              </ul>
+            </article>
 
-            <div class="skills-graph__nodes">
-              <button
-                class="skill-node skill-node--core"
-                type="button"
-                style="--x: 50%; --y: 49%"
-                data-node-id="core"
-                data-title="全栈开发 × Agent 工程"
-                data-links="product browser backend architecture security production agent-development agent-runtime"
-                data-kicker="核心方向 · ENGINEERING FOCUS"
-                data-description="贯通前端应用、后端服务与智能体系统，面向业务落地和研发提效，具备从产品实现、系统设计到工程化交付的端到端开发能力。"
-                data-tags="全栈应用开发|Agent 系统设计|业务与研发提效|工程化交付"
-                aria-controls="skill-tooltip"
-                aria-pressed="false"
-              >
-                <span class="skill-node__eyes" aria-hidden="true"><i class="skill-node__eye"><b></b></i><i class="skill-node__eye"><b></b></i></span>
-                <span class="skill-node__core-label">全栈开发 × Agent 工程</span>
-                <span class="skill-node__core-meta">全栈开发 · Agent 工程</span>
-              </button>
+            <div class="capability-tree__trunk" aria-hidden="true"></div>
 
-              <button
-                class="skill-node skill-node--capability skill-node--product"
-                type="button"
-                style="--x: 50%; --y: 14%"
-                data-node-id="product"
-                data-title="产品与交互"
-                data-links="browser backend"
-                data-kicker="全栈工程 · 01"
-                data-description="以类型约束、组件边界和可预测数据流承载复杂交互，并持续优化可访问性与核心体验指标。"
-                data-tags="TypeScript|React / Vue|状态管理|可访问性"
-                aria-controls="skill-tooltip"
-                aria-pressed="false"
-              >
-                <span class="skill-node__title">产品与交互</span>
-                <span class="skill-node__meta">需求 · 体验 · 实现</span>
-              </button>
+            <div class="capability-domains">
+              <section class="capability-domain capability-domain--fullstack" aria-labelledby="fullstack-title">
+                <header class="capability-domain__head">
+                  <div>
+                    <p>DOMAIN 01 / PRODUCT TO SERVICE</p>
+                    <h3 id="fullstack-title">全栈开发</h3>
+                  </div>
+                  <span>字节跳动全栈研发实践</span>
+                  <a href="#skills" data-skill-document="fullstack" hidden>实践说明 ↗</a>
+                </header>
 
-              <button
-                class="skill-node skill-node--capability skill-node--browser"
-                type="button"
-                style="--x: 25%; --y: 24%"
-                data-node-id="browser"
-                data-title="浏览器与 Web"
-                data-links="architecture"
-                data-cross-links="security"
-                data-kicker="全栈工程 · 02"
-                data-description="基于渲染流水线、事件循环和网络缓存定位性能瓶颈，并通过 CSP、CORS 与输入输出编码控制浏览器侧风险。"
-                data-tags="HTTP / 缓存|Web Vitals|CSP / CORS|DevTools"
-                aria-controls="skill-tooltip"
-                aria-pressed="false"
-              >
-                <span class="skill-node__title">浏览器与 Web</span>
-                <span class="skill-node__meta">原理 · 性能 · 安全</span>
-              </button>
+                <div class="capability-domain__branches">
+                  <article class="capability-branch">
+                    <div class="capability-branch__title">
+                      <span>01</span>
+                      <h4>前端产品工程</h4>
+                    </div>
+                    <p>从交互与组件抽象，到复杂页面状态、数据流和性能体验，构建可维护的产品界面。</p>
+                    <ul class="capability-tags">
+                      <li>TypeScript</li><li>React</li><li>Vue</li><li>Vite</li><li>状态管理</li><li>微前端</li>
+                    </ul>
+                    <a href="#skills" data-skill-document="frontend" hidden>实践说明 ↗</a>
+                  </article>
 
-              <button
-                class="skill-node skill-node--capability skill-node--backend"
-                type="button"
-                style="--x: 75%; --y: 24%"
-                data-node-id="backend"
-                data-title="后端与数据"
-                data-links="security"
-                data-cross-links="agent-development"
-                data-kicker="全栈工程 · 03"
-                data-description="以接口契约和领域模型组织服务，使用事务、幂等、缓存与异步任务保障数据一致性和业务吞吐。"
-                data-tags="Go / Node.js|HTTP / RPC|SQL / Redis|事务与幂等"
-                aria-controls="skill-tooltip"
-                aria-pressed="false"
-              >
-                <span class="skill-node__title">后端与数据</span>
-                <span class="skill-node__meta">API · 建模 · 并发</span>
-              </button>
+                  <article class="capability-branch">
+                    <div class="capability-branch__title">
+                      <span>02</span>
+                      <h4>后端服务设计</h4>
+                    </div>
+                    <p>围绕 API 契约、服务边界、业务编排与异步任务，完成从接口设计到稳定交付。</p>
+                    <ul class="capability-tags">
+                      <li>Go</li><li>Node.js</li><li>HTTP / RPC</li><li>IDL</li><li>并发控制</li><li>任务调度</li>
+                    </ul>
+                    <a href="#skills" data-skill-document="backend" hidden>实践说明 ↗</a>
+                  </article>
 
-              <button
-                class="skill-node skill-node--capability skill-node--architecture"
-                type="button"
-                style="--x: 14%; --y: 50%"
-                data-node-id="architecture"
-                data-title="架构设计"
-                data-links="production"
-                data-cross-links="backend agent-runtime"
-                data-kicker="系统工程 · 04"
-                data-description="通过模块边界、接口契约和事件驱动隔离变化，并根据规模在一致性、扩展性、复杂度与成本之间取舍。"
-                data-tags="模块边界|接口契约|事件驱动|架构演进"
-                aria-controls="skill-tooltip"
-                aria-pressed="false"
-              >
-                <span class="skill-node__title">架构设计</span>
-                <span class="skill-node__meta">边界 · 扩展 · 权衡</span>
-              </button>
+                  <article class="capability-branch">
+                    <div class="capability-branch__title">
+                      <span>03</span>
+                      <h4>数据与状态</h4>
+                    </div>
+                    <p>通过数据建模、事务、索引与缓存组织访问路径，维护跨页面与服务的状态一致性。</p>
+                    <ul class="capability-tags">
+                      <li>MySQL</li><li>PostgreSQL</li><li>Redis</li><li>SQL</li><li>事务</li><li>缓存</li>
+                    </ul>
+                    <a href="#skills" data-skill-document="data" hidden>实践说明 ↗</a>
+                  </article>
 
-              <button
-                class="skill-node skill-node--capability skill-node--security"
-                type="button"
-                style="--x: 86%; --y: 50%"
-                data-node-id="security"
-                data-title="安全与可靠性"
-                data-links="agent-development"
-                data-cross-links="agent-runtime"
-                data-kicker="系统工程 · 05"
-                data-description="从 OAuth/OIDC 身份认证、RBAC/ABAC 授权到输入校验、限流降级与审计，建立纵深防御和故障边界。"
-                data-tags="OAuth / OIDC|RBAC / ABAC|OWASP|限流与降级"
-                aria-controls="skill-tooltip"
-                aria-pressed="false"
-              >
-                <span class="skill-node__title">安全与可靠性</span>
-                <span class="skill-node__meta">权限 · 防护 · 容错</span>
-              </button>
+                  <article class="capability-branch">
+                    <div class="capability-branch__title">
+                      <span>04</span>
+                      <h4>工程交付</h4>
+                    </div>
+                    <p>覆盖开发、测试、部署与问题定位，用可复现的环境和自动化流程保障交付质量。</p>
+                    <ul class="capability-tags">
+                      <li>Docker</li><li>Linux</li><li>Git</li><li>CI / CD</li><li>自动化测试</li><li>可观测性</li>
+                    </ul>
+                    <a href="#skills" data-skill-document="delivery" hidden>实践说明 ↗</a>
+                  </article>
+                </div>
+              </section>
 
-              <button
-                class="skill-node skill-node--capability skill-node--production"
-                type="button"
-                style="--x: 25%; --y: 76%"
-                data-node-id="production"
-                data-title="交付与运维"
-                data-links="agent-runtime"
-                data-cross-links="agent-development security"
-                data-kicker="工程交付 · 06"
-                data-description="用分层测试、CI/CD、灰度回滚和 Logs/Metrics/Trace 串联代码提交、上线监控与故障恢复。"
-                data-tags="自动化测试|Docker / CI/CD|Logs / Metrics / Trace|灰度与回滚"
-                aria-controls="skill-tooltip"
-                aria-pressed="false"
-              >
-                <span class="skill-node__title">交付与运维</span>
-                <span class="skill-node__meta">测试 · 部署 · 观测</span>
-              </button>
+              <section class="capability-domain capability-domain--agent" aria-labelledby="agent-title">
+                <header class="capability-domain__head">
+                  <div>
+                    <p>DOMAIN 02 / MODEL TO ACTION</p>
+                    <h3 id="agent-title">Agent 工程</h3>
+                  </div>
+                  <span>字节跳动 Agent 工程实践</span>
+                  <a href="#skills" data-skill-document="agent" hidden>实践说明 ↗</a>
+                </header>
 
-              <button
-                class="skill-node skill-node--capability skill-node--agent-development"
-                type="button"
-                style="--x: 75%; --y: 76%"
-                data-node-id="agent-development"
-                data-title="Agent 开发"
-                data-links="agent-runtime"
-                data-cross-links="product"
-                data-kicker="Agent 开发 · 07"
-                data-description="基于第三方云模型 API，围绕任务上下文、工具接入和结构化输出构建可执行、可集成的智能体能力。"
-                data-tags="第三方模型 API|Context Engineering|Structured Output|Tool Calling / MCP"
-                aria-controls="skill-tooltip"
-                aria-pressed="false"
-              >
-                <span class="skill-node__title">Agent 开发</span>
-                <span class="skill-node__meta">上下文 · 工具 · API</span>
-              </button>
+                <div class="capability-domain__branches">
+                  <article class="capability-branch">
+                    <div class="capability-branch__title">
+                      <span>01</span>
+                      <h4>模型应用工程</h4>
+                    </div>
+                    <p>组织任务指令、上下文、外部知识和输出约束，让模型结果可用、可解析、可验证。</p>
+                    <ul class="capability-tags">
+                      <li>Prompt</li><li>Context Engineering</li><li>RAG</li><li>Embedding</li><li>Structured Output</li>
+                    </ul>
+                    <a href="#skills" data-skill-document="model-app" hidden>实践说明 ↗</a>
+                  </article>
 
-              <button
-                class="skill-node skill-node--capability skill-node--agent-runtime"
-                type="button"
-                style="--x: 50%; --y: 87%"
-                data-node-id="agent-runtime"
-                data-title="Agent 运行时"
-                data-kicker="Agent 开发 · 08"
-                data-description="将工作流、状态记忆、检查点与人工审批组成可恢复的执行循环，让长任务在真实业务环境中稳定运行。"
-                data-tags="Workflow / Planning|State / Memory|Checkpoint / Recovery|Human-in-the-loop"
-                aria-controls="skill-tooltip"
-                aria-pressed="false"
-              >
-                <span class="skill-node__title">Agent 运行时</span>
-                <span class="skill-node__meta">编排 · 状态 · 恢复</span>
-              </button>
+                  <article class="capability-branch">
+                    <div class="capability-branch__title">
+                      <span>02</span>
+                      <h4>Agent Runtime</h4>
+                    </div>
+                    <p>把模型决策接入真实工具与业务系统，组织可终止、可校验的任务循环和工作流。</p>
+                    <ul class="capability-tags">
+                      <li>Tool Calling</li><li>MCP</li><li>Agent Loop</li><li>Workflow</li><li>Planning</li><li>State</li>
+                    </ul>
+                    <a href="#skills" data-skill-document="runtime" hidden>实践说明 ↗</a>
+                  </article>
+
+                  <article class="capability-branch">
+                    <div class="capability-branch__title">
+                      <span>03</span>
+                      <h4>可靠 Agent Harness</h4>
+                    </div>
+                    <p>为长任务建立持久化、检查点、幂等与恢复机制，使执行能够暂停、续跑和安全重试。</p>
+                    <ul class="capability-tags">
+                      <li>Persistence</li><li>Checkpoint</li><li>Idempotency</li><li>Retry</li><li>Resume</li><li>Recovery</li>
+                    </ul>
+                    <a href="#skills" data-skill-document="harness" hidden>实践说明 ↗</a>
+                  </article>
+
+                  <article class="capability-branch">
+                    <div class="capability-branch__title">
+                      <span>04</span>
+                      <h4>治理、观测与评估</h4>
+                    </div>
+                    <p>通过权限门禁、人工确认、执行追踪和行为评估，约束 Agent 的行动边界与结果质量。</p>
+                    <ul class="capability-tags">
+                      <li>Permission</li><li>Approval</li><li>Human-in-the-loop</li><li>Trace</li><li>Metrics</li><li>Eval</li>
+                    </ul>
+                    <a href="#skills" data-skill-document="governance" hidden>实践说明 ↗</a>
+                  </article>
+                </div>
+              </section>
             </div>
 
-            <aside class="skill-tooltip" id="skill-tooltip" data-skill-tooltip aria-live="polite" aria-hidden="true">
-              <p class="skill-tooltip__kicker"></p>
-              <h3 class="skill-tooltip__title"></h3>
-              <p class="skill-tooltip__description"></p>
-              <p class="skill-tooltip__stack-label">工程要点</p>
-              <div class="skill-tooltip__tags"></div>
-            </aside>
+            <section class="capability-foundation" aria-labelledby="foundation-title">
+              <header>
+                <p>FOUNDATION / 两条主枝共用的工程底座</p>
+                <h3 id="foundation-title">把能力组织成可交付系统</h3>
+              </header>
+              <ul>
+                <li><strong>接口与契约</strong><span>API · IDL · Schema · Validation</span></li>
+                <li><strong>状态与一致性</strong><span>Transaction · Checkpoint · Idempotency</span></li>
+                <li><strong>测试与评估</strong><span>Unit · Integration · E2E · Eval</span></li>
+                <li><strong>观测与排障</strong><span>Logs · Metrics · Trace · Recovery</span></li>
+              </ul>
+            </section>
 
-            <div class="skills-graph__footer" aria-hidden="true">
-              <span>两条主线 · 全栈开发 × Agent 工程</span>
-              <span>ESC 取消锁定</span>
+            <div class="capability-tree__footer" aria-hidden="true">
+              <span>AI FULL-STACK ENGINEER / 2026</span>
+              <span>产品交互 → 服务与数据 → Agent 执行与可靠性</span>
             </div>
           </div>
         </section>

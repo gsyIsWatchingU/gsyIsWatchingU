@@ -126,11 +126,16 @@
 .hero .button--light {
   color: white;
   border-color: rgba(255, 255, 255, 0.72);
+  font-family: var(--font-body);
 }
 
 .hero .button--light:hover {
   color: var(--ink);
   background: white;
+}
+
+.hero .button:hover {
+  border-radius: 7px;
 }
 
 .hero__visual {

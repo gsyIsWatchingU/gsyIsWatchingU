@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "gsy-guestbook-api",
+  "main": "src/index.js",
+  "compatibility_date": "2026-05-03",
+  "vars": {
+    "ALLOWED_ORIGINS": "https://gsyiswatchingu.github.io,http://127.0.0.1:5500,http://localhost:5500"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "gsy-guestbook",
+      "database_id": "0ae6c300-91f2-46a2-8035-a8859dddc776",
+      "migrations_dir": "migrations"
+    }
+  ]
+}

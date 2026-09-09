@@ -1,0 +1,514 @@
+.hero__danmaku {
+  position: absolute;
+  inset: 76px 0 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+  mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+}
+
+.guestbook-danmaku {
+  --lane-top: 10%;
+  --duration: 24s;
+  --delay: 0s;
+  position: absolute;
+  left: 0;
+  top: var(--lane-top);
+  max-width: min(62vw, 680px);
+  padding: 8px 14px;
+  border: 1px solid rgba(221, 233, 255, 0.11);
+  border-radius: 999px;
+  color: rgba(247, 250, 255, 0.72);
+  background: rgba(5, 9, 21, 0.28);
+  box-shadow: 0 0 24px rgba(58, 135, 255, 0.06);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  font-size: clamp(12px, 0.9vw, 14px);
+  line-height: 1.45;
+  white-space: nowrap;
+  will-change: transform;
+  animation: guestbookDrift var(--duration) linear var(--delay) infinite;
+}
+
+.guestbook-danmaku strong {
+  margin-right: 9px;
+  color: rgba(115, 207, 255, 0.9);
+  font-weight: 500;
+}
+
+.guestbook-danmaku:nth-child(3n) strong {
+  color: rgba(242, 215, 110, 0.92);
+}
+
+.guestbook-danmaku:nth-child(4n) {
+  opacity: 0.68;
+}
+
+.guestbook__toast {
+  position: fixed;
+  z-index: 1002;
+  left: 50%;
+  bottom: 34px;
+  margin: 0;
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  color: white;
+  background: rgba(7, 12, 28, 0.88);
+  font-size: 13px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 8px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.guestbook__toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.guestbook-dialog {
+  width: min(92vw, 520px);
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+  color: #f4f7ff;
+  background: rgba(5, 8, 18, 0.96);
+  box-shadow: 0 38px 120px rgba(0, 0, 0, 0.64);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+}
+
+.guestbook-dialog::backdrop {
+  background: rgba(0, 2, 8, 0.72);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  cursor: default;
+}
+
+.guestbook-dialog__form {
+  padding: clamp(24px, 4vw, 38px);
+}
+
+.guestbook-dialog__head {
+  margin-bottom: 28px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.guestbook-dialog__head p {
+  margin: 0 0 9px;
+  color: rgba(228, 236, 255, 0.46);
+  font: 600 10px/1.4 var(--font-mono);
+  letter-spacing: 0.14em;
+}
+
+.guestbook-dialog__head h3 {
+  margin: 0;
+  font-size: clamp(27px, 4vw, 38px);
+  font-weight: 500;
+}
+
+.guestbook-dialog__close {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  color: white;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.guestbook-dialog__form > label,
+.guestbook-dialog__label-row label {
+  display: block;
+  margin: 20px 0 9px;
+  color: rgba(228, 236, 255, 0.58);
+  font-size: 13px;
+}
+
+.guestbook-dialog__label-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.guestbook-dialog__label-row > span {
+  color: rgba(228, 236, 255, 0.42);
+  font-size: 12px;
+}
+
+.guestbook-dialog input,
+.guestbook-dialog textarea {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid rgba(221, 233, 255, 0.2);
+  border-radius: 0;
+  color: white;
+  background: transparent;
+  font: 400 16px/1.7 var(--font-body);
+  outline: none;
+  transition: border-color 180ms ease;
+}
+
+.guestbook-dialog input {
+  height: 46px;
+}
+
+.guestbook-dialog textarea {
+  min-height: 126px;
+  padding: 9px 0;
+  resize: vertical;
+}
+
+.guestbook-dialog input:focus,
+.guestbook-dialog textarea:focus {
+  border-color: #73cfff;
+}
+
+.guestbook-dialog input::placeholder,
+.guestbook-dialog textarea::placeholder {
+  color: rgba(228, 236, 255, 0.28);
+}
+
+.guestbook__honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.guestbook-dialog__status {
+  min-height: 20px;
+  margin: 15px 0 0;
+  color: #ffaaa3;
+  font-size: 12px;
+}
+
+.guestbook-dialog__status[data-type="success"] {
+  color: #96d99c;
+}
+
+.guestbook-dialog__status[data-type="launching"] {
+  color: #8bd8ff;
+}
+
+.guestbook-dialog__submit {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 68px;
+  margin-top: 10px;
+  padding: 0 12px 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  border: 1px solid rgba(137, 210, 255, 0.48);
+  border-radius: 12px;
+  color: #f7fbff;
+  background:
+    radial-gradient(circle at 86% 50%, rgba(66, 177, 255, 0.18), transparent 26%),
+    linear-gradient(105deg, rgba(11, 19, 39, 0.98), rgba(7, 12, 27, 0.98));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 0 28px rgba(70, 155, 255, 0.06),
+    0 12px 30px rgba(0, 0, 0, 0.2);
+  font-family: var(--font-body);
+  text-align: left;
+  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+.guestbook-dialog__submit::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 18%, rgba(132, 219, 255, 0.12) 48%, transparent 72%);
+  opacity: 0;
+  transform: translateX(-70%);
+  transition: opacity 220ms ease;
+}
+
+.guestbook-dialog__submit:hover:not(:disabled) {
+  border-color: rgba(162, 227, 255, 0.88);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 0 34px rgba(70, 155, 255, 0.12),
+    0 14px 36px rgba(30, 119, 219, 0.16);
+  transform: translateY(-2px);
+}
+
+.guestbook-dialog__submit:hover:not(:disabled)::before {
+  opacity: 1;
+  transform: translateX(70%);
+  transition: opacity 220ms ease, transform 700ms ease;
+}
+
+.guestbook-dialog__submit:disabled {
+  cursor: wait;
+}
+
+.guestbook-launch__copy {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 6px;
+}
+
+.guestbook-launch__overline {
+  color: rgba(167, 211, 255, 0.48);
+  font: 600 8px/1 var(--font-mono);
+  letter-spacing: 0.18em;
+  transition: color 180ms ease;
+}
+
+.guestbook-launch__label {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.guestbook-launch__scene {
+  position: relative;
+  width: 72px;
+  height: 52px;
+  flex: 0 0 72px;
+}
+
+.guestbook-launch__orbit {
+  position: absolute;
+  inset: 3px 11px 3px 15px;
+  border: 1px solid rgba(132, 219, 255, 0.2);
+  border-radius: 50%;
+  transform: rotate(-34deg);
+  transition: border-color 220ms ease, transform 420ms ease;
+}
+
+.guestbook-launch__orbit::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: 5px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #c8efff;
+  box-shadow: 0 0 8px #73cfff;
+}
+
+.guestbook-launch__craft {
+  position: absolute;
+  z-index: 2;
+  left: 25px;
+  top: 9px;
+  width: 24px;
+  height: 29px;
+  transform: rotate(42deg);
+  transform-origin: 50% 70%;
+  filter: drop-shadow(0 0 7px rgba(115, 207, 255, 0.28));
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+.guestbook-launch__craft svg {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.guestbook-launch__craft-body {
+  fill: rgba(232, 247, 255, 0.94);
+}
+
+.guestbook-launch__craft-window {
+  fill: #327fbd;
+  stroke: rgba(5, 17, 37, 0.82);
+  stroke-width: 1.4;
+}
+
+.guestbook-launch__craft-fin {
+  fill: rgba(93, 178, 235, 0.75);
+  stroke: rgba(232, 247, 255, 0.88);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.2;
+}
+
+.guestbook-launch__flame {
+  position: absolute;
+  z-index: 1;
+  left: 2px;
+  top: 23px;
+  width: 8px;
+  height: 20px;
+  border-radius: 60% 40% 70% 30%;
+  background: linear-gradient(#fff8ca, #ffb347 38%, rgba(96, 184, 255, 0.1) 88%);
+  filter: blur(0.3px) drop-shadow(0 0 6px rgba(255, 172, 70, 0.8));
+  opacity: 0;
+  transform: rotate(6deg) scaleY(0.2);
+  transform-origin: 50% 0;
+}
+
+.guestbook-launch__star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #e8f8ff;
+  box-shadow: 0 0 5px rgba(115, 207, 255, 0.86);
+  opacity: 0.55;
+}
+
+.guestbook-launch__star--one { left: 7px; top: 13px; }
+.guestbook-launch__star--two { left: 15px; bottom: 8px; }
+.guestbook-launch__star--three { right: 2px; top: 9px; }
+
+.guestbook-dialog__submit:hover:not(:disabled) .guestbook-launch__craft {
+  transform: translate(2px, -2px) rotate(42deg);
+  filter: drop-shadow(0 0 10px rgba(115, 207, 255, 0.5));
+}
+
+.guestbook-dialog__submit:hover:not(:disabled) .guestbook-launch__orbit {
+  border-color: rgba(132, 219, 255, 0.42);
+  transform: rotate(-24deg) scale(1.04);
+}
+
+.guestbook-dialog__submit.is-launching {
+  border-color: rgba(137, 218, 255, 0.88);
+  box-shadow:
+    inset 0 0 40px rgba(57, 154, 255, 0.16),
+    0 0 0 1px rgba(115, 207, 255, 0.1),
+    0 14px 40px rgba(29, 119, 218, 0.22);
+  animation: guestbookIgnition 240ms linear 2;
+}
+
+.guestbook-dialog__submit.is-launching::before {
+  opacity: 1;
+  animation: guestbookLaunchSweep 1050ms ease-out both;
+}
+
+.guestbook-dialog__submit.is-launching .guestbook-launch__overline {
+  color: rgba(186, 229, 255, 0.82);
+}
+
+.guestbook-dialog__submit.is-launching .guestbook-launch__orbit {
+  animation: guestbookOrbitPulse 900ms ease-out both;
+}
+
+.guestbook-dialog__submit.is-launching .guestbook-launch__craft {
+  animation: guestbookRocketLaunch 1100ms cubic-bezier(0.42, 0, 0.38, 1) both;
+}
+
+.guestbook-dialog__submit.is-launching .guestbook-launch__flame {
+  animation: guestbookRocketFlame 140ms ease-in-out 6 alternate;
+}
+
+.guestbook-dialog__submit.is-launching .guestbook-launch__star--one {
+  animation: guestbookStarTrail 620ms 160ms ease-out both;
+}
+
+.guestbook-dialog__submit.is-launching .guestbook-launch__star--two {
+  animation: guestbookStarTrail 720ms 260ms ease-out both;
+}
+
+.guestbook-dialog__submit.is-launching .guestbook-launch__star--three {
+  animation: guestbookStarTrail 560ms 80ms ease-out both;
+}
+
+@keyframes guestbookDrift {
+  from { transform: translate3d(calc(100vw + 60px), 0, 0); }
+  to { transform: translate3d(calc(-100% - 100vw), 0, 0); }
+}
+
+@keyframes guestbookIgnition {
+  0%, 100% { transform: translate(0); }
+  30% { transform: translate(-1px, 1px); }
+  65% { transform: translate(1px, -1px); }
+}
+
+@keyframes guestbookLaunchSweep {
+  0% { transform: translateX(-65%); }
+  100% { transform: translateX(85%); }
+}
+
+@keyframes guestbookOrbitPulse {
+  0% { opacity: 1; transform: rotate(-34deg) scale(1); }
+  55% { opacity: 0.8; transform: rotate(18deg) scale(1.12); }
+  100% { opacity: 0; transform: rotate(48deg) scale(1.5); }
+}
+
+@keyframes guestbookRocketLaunch {
+  0% { opacity: 1; transform: translate(0, 0) rotate(42deg) scale(1); }
+  18% { transform: translate(-2px, 2px) rotate(42deg) scale(1); }
+  42% { opacity: 1; transform: translate(7px, -7px) rotate(42deg) scale(1.03); }
+  100% { opacity: 0; transform: translate(54px, -58px) rotate(42deg) scale(0.74); }
+}
+
+@keyframes guestbookRocketFlame {
+  from { opacity: 0.72; transform: rotate(6deg) scaleY(0.62); }
+  to { opacity: 1; transform: rotate(6deg) scaleY(1.08); }
+}
+
+@keyframes guestbookStarTrail {
+  0% { opacity: 0.7; transform: translate(0, 0) scale(1); }
+  100% { opacity: 0; transform: translate(-20px, 20px) scale(0.2); }
+}
+
+@media (max-width: 680px) {
+  .hero__danmaku {
+    inset: 68px 0 0;
+  }
+
+  .guestbook-danmaku {
+    max-width: 84vw;
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__danmaku {
+    display: none;
+  }
+
+  .guestbook-dialog__submit,
+  .guestbook-dialog__submit::before,
+  .guestbook-launch__orbit,
+  .guestbook-launch__craft,
+  .guestbook-launch__flame,
+  .guestbook-launch__star {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (pointer: fine) {
+  html.guestbook-dialog-open,
+  html.guestbook-dialog-open body,
+  html.guestbook-dialog-open a,
+  html.guestbook-dialog-open button,
+  html.guestbook-dialog-open [tabindex] {
+    cursor: default;
+  }
+
+  html.guestbook-dialog-open input,
+  html.guestbook-dialog-open textarea {
+    cursor: text;
+  }
+
+  html.guestbook-dialog-open .cursor-ring,
+  html.guestbook-dialog-open .cursor-dot {
+    opacity: 0 !important;
+  }
+}

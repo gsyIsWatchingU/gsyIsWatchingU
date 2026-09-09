@@ -6,9 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="个人主页：专业技能、实习经历与项目实践。"
+      content="郭书羽的个人技术主页：AI 全栈开发、Agent 应用工程、字节跳动实习经历，以及论迹、Algorithm Lab 与 WriteHere 独立产品。"
     />
-    <title>gsy｜个人主页</title>
+    <meta name="theme-color" content="#0d0d0c" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="郭书羽｜AI 全栈工程师 · Agent 应用" />
+    <meta
+      property="og:description"
+      content="从产品交互、服务与数据，到 Agent Runtime 与 Harness 的完整工程交付。"
+    />
+    <meta
+      property="og:image"
+      content="https://gsyiswatchingu.github.io/assets/gsy-logo-transparent-mark.png"
+    />
+    <link rel="canonical" href="https://gsyiswatchingu.github.io/" />
+    <title>郭书羽｜AI 全栈工程师 · Agent 应用</title>
     <link rel="icon" type="image/x-icon" href="./favicon.ico?v=20260904" />
     <link rel="shortcut icon" href="./favicon.ico?v=20260904" />
     <link
@@ -21,7 +33,20 @@
     <link rel="stylesheet" href="./styles/skills.css" />
     <link rel="stylesheet" href="./styles/experience.css" />
     <link rel="stylesheet" href="./styles/projects.css" />
-    <link rel="stylesheet" href="./styles/closing.css" />
+    <link rel="stylesheet" href="./styles/guestbook.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "郭书羽",
+        "jobTitle": "AI 全栈工程师 / Agent 应用开发",
+        "email": "mailto:gsyiswatchingu@163.com",
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "华中科技大学" },
+          { "@type": "CollegeOrUniversity", "name": "西南大学" }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div class="cursor-ring" aria-hidden="true"></div>
@@ -29,7 +54,7 @@
 
     <div class="top-note">
       <span>PORTFOLIO 2026</span>
-      <span class="top-note__center">持续学习 · 保持创造</span>
+      <span class="top-note__center">睁开眼睛，这就是你新的机会</span>
       <span>SCROLL TO EXPLORE ↓</span>
     </div>
     <header class="site-header">
@@ -41,11 +66,14 @@
       </a>
 
       <nav class="site-nav" aria-label="主导航">
-        <a class="magnetic" href="#skills">专业技能</a>
+        <a class="magnetic" href="#skills">专业能力</a>
         <a class="magnetic" href="#experience">实习经历</a>
-        <a class="magnetic" href="#projects">项目实践</a>
+        <a class="magnetic" href="#projects">独立产品</a>
       </nav>
 
+      <a class="header-email magnetic" href="mailto:gsyiswatchingu@163.com">
+        gsyiswatchingu@163.com
+      </a>
     </header>
 
     <main id="top">
@@ -53,23 +81,28 @@
         <div class="hero__deep-space" aria-hidden="true">
           <canvas class="galaxy-canvas"></canvas>
         </div>
+        <div class="hero__danmaku" id="guestbook-sky" aria-hidden="true"></div>
 
         <div class="hero__copy reveal">
           <p class="eyebrow hero__role">
             <span></span>
-            <strong>全栈开发</strong>
+            <strong>AI 全栈工程师</strong>
             <b aria-hidden="true">×</b>
-            <strong>Agent 开发</strong>
+            <strong>Agent 应用</strong>
           </p>
           <h1 id="hero-title">拥抱变化。</h1>
           <p class="hero__intro">
-            没有人可以回到过去重新开始，<br />
-            但每个人都可以从现在开始，创造全新的结局。
+            华中科技大学电子信息硕士在读，<br />
+            拥有字节跳动全栈研发、Agent 工程实习经历。<br />
+            贯通产品交互、后端服务与可靠的 Agent Harness。
           </p>
           <div class="hero__actions">
-            <a class="button button--dark magnetic" href="#explore">
-              开始了解 <span aria-hidden="true">↘</span>
+            <a class="button button--dark magnetic" href="#projects">
+              查看项目 <span aria-hidden="true">↘</span>
             </a>
+            <button class="button button--light magnetic" id="guestbook-open" type="button">
+              写一句留言 <span aria-hidden="true">＋</span>
+            </button>
           </div>
         </div>
 
@@ -166,201 +199,256 @@
         </div>
 
       </section>
+      <p class="guestbook__toast" id="guestbook-toast" role="status" aria-live="polite"></p>
+
+      <dialog class="guestbook-dialog" id="guestbook-dialog" aria-labelledby="guestbook-dialog-title">
+        <form class="guestbook-dialog__form" id="guestbook-form">
+          <header class="guestbook-dialog__head">
+            <div>
+              <p>LEAVE A SIGNAL</p>
+              <h3 id="guestbook-dialog-title">写下一句话</h3>
+            </div>
+            <button class="guestbook-dialog__close" id="guestbook-close" type="button" aria-label="关闭留言弹窗">×</button>
+          </header>
+
+          <label for="guestbook-nickname">怎么称呼你</label>
+          <input
+            id="guestbook-nickname"
+            name="nickname"
+            type="text"
+            minlength="2"
+            maxlength="20"
+            autocomplete="nickname"
+            placeholder="昵称"
+            required
+          />
+
+          <div class="guestbook-dialog__label-row">
+            <label for="guestbook-content">留言</label>
+            <span><span id="guestbook-character-count">0</span>/300</span>
+          </div>
+          <textarea
+            id="guestbook-content"
+            name="content"
+            minlength="2"
+            maxlength="300"
+            rows="5"
+            placeholder="建议、问题，或者一句路过的招呼。"
+            required
+          ></textarea>
+
+          <div class="guestbook__honeypot" aria-hidden="true">
+            <label for="guestbook-website">网站</label>
+            <input id="guestbook-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <p class="guestbook-dialog__status" id="guestbook-status" role="status" aria-live="polite"></p>
+          <button class="guestbook-dialog__submit" id="guestbook-submit" type="submit">
+            <span class="guestbook-launch__copy">
+              <span class="guestbook-launch__overline">SEND TO ORBIT</span>
+              <span class="guestbook-launch__label">发射到星海</span>
+            </span>
+            <span class="guestbook-launch__scene" aria-hidden="true">
+              <span class="guestbook-launch__orbit"></span>
+              <span class="guestbook-launch__star guestbook-launch__star--one"></span>
+              <span class="guestbook-launch__star guestbook-launch__star--two"></span>
+              <span class="guestbook-launch__star guestbook-launch__star--three"></span>
+              <span class="guestbook-launch__craft">
+                <svg viewBox="0 0 28 34" focusable="false">
+                  <path class="guestbook-launch__craft-body" d="M14 2.2c4.2 3.9 6.3 8.3 6.3 13.1v7.3L16.8 26H11l-3.4-3.4v-7.3C7.6 10.5 9.7 6.1 14 2.2Z" />
+                  <path class="guestbook-launch__craft-window" d="M14 9.2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z" />
+                  <path class="guestbook-launch__craft-fin" d="m7.6 18.2-4 5.8v4.1l7.3-3.5M20.3 18.2l4.1 5.8v4.1L17 24.6" />
+                </svg>
+                <span class="guestbook-launch__flame"></span>
+              </span>
+            </span>
+          </button>
+        </form>
+      </dialog>
 
       <section class="explore" id="explore" aria-label="个人能力与经历">
-        <section class="skills-showcase" id="skills" aria-label="专业能力">
-          <div class="skills-graph reveal" data-skill-graph aria-label="以全栈开发与 Agent 工程为核心的专业能力图谱">
-            <div class="skills-graph__topline" aria-hidden="true">
-              <span>01 — TECHNICAL CAPABILITIES</span>
-              <span>悬浮探索 · 点击锁定</span>
+        <section class="skills-showcase" id="skills" aria-labelledby="skills-title">
+          <header class="portfolio-section__heading reveal">
+            <div>
+              <p class="portfolio-section__eyebrow">02 / TECHNICAL CAPABILITY TREE</p>
+              <h2 id="skills-title">技术能力树</h2>
+            </div>
+            <p>以 AI 全栈为树根，沿全栈开发与 Agent 工程两条主枝，向下展开到可落地的技术能力。</p>
+          </header>
+
+          <div class="capability-tree reveal" data-capability-tree>
+            <div class="capability-tree__legend" aria-hidden="true">
+              <span>ROOT → DOMAIN → BRANCH → STACK</span>
+              <span>能力结构 / 工程实践 / 技术栈</span>
             </div>
 
-            <svg class="skills-graph__edges" aria-hidden="true"></svg>
+            <article class="capability-root">
+              <p>ROOT / 求职定位</p>
+              <h3>AI 全栈工程师</h3>
+              <span>贯通产品交互、后端服务与可靠的 Agent Harness</span>
+              <ul class="capability-tags" aria-label="核心技术方向">
+                <li>TypeScript</li>
+                <li>Go / Node.js</li>
+                <li>LLM 应用</li>
+                <li>Agent Runtime</li>
+              </ul>
+            </article>
 
-            <div class="skills-graph__nodes">
-              <button
-                class="skill-node skill-node--core"
-                type="button"
-                style="--x: 50%; --y: 49%"
-                data-node-id="core"
-                data-title="全栈开发 × Agent 工程"
-                data-links="product browser backend architecture security production agent-development agent-runtime"
-                data-kicker="核心方向 · ENGINEERING FOCUS"
-                data-description="贯通前端应用、后端服务与智能体系统，面向业务落地和研发提效，具备从产品实现、系统设计到工程化交付的端到端开发能力。"
-                data-tags="全栈应用开发|Agent 系统设计|业务与研发提效|工程化交付"
-                aria-controls="skill-tooltip"
-                aria-pressed="false"
-              >
-                <span class="skill-node__eyes" aria-hidden="true"><i class="skill-node__eye"><b></b></i><i class="skill-node__eye"><b></b></i></span>
-                <span class="skill-node__core-label">全栈开发 × Agent 工程</span>
-                <span class="skill-node__core-meta">全栈开发 · Agent 工程</span>
-              </button>
+            <div class="capability-tree__trunk" aria-hidden="true"></div>
 
-              <button
-                class="skill-node skill-node--capability skill-node--product"
-                type="button"
-                style="--x: 50%; --y: 14%"
-                data-node-id="product"
-                data-title="产品与交互"
-                data-links="browser backend"
-                data-kicker="全栈工程 · 01"
-                data-description="以类型约束、组件边界和可预测数据流承载复杂交互，并持续优化可访问性与核心体验指标。"
-                data-tags="TypeScript|React / Vue|状态管理|可访问性"
-                aria-controls="skill-tooltip"
-                aria-pressed="false"
-              >
-                <span class="skill-node__title">产品与交互</span>
-                <span class="skill-node__meta">需求 · 体验 · 实现</span>
-              </button>
+            <div class="capability-domains">
+              <section class="capability-domain capability-domain--fullstack" aria-labelledby="fullstack-title">
+                <header class="capability-domain__head">
+                  <div>
+                    <p>DOMAIN 01 / PRODUCT TO SERVICE</p>
+                    <h3 id="fullstack-title">全栈开发</h3>
+                  </div>
+                  <span>字节跳动全栈研发实践</span>
+                  <a href="#skills" data-skill-document="fullstack" hidden>实践说明 ↗</a>
+                </header>
 
-              <button
-                class="skill-node skill-node--capability skill-node--browser"
-                type="button"
-                style="--x: 25%; --y: 24%"
-                data-node-id="browser"
-                data-title="浏览器与 Web"
-                data-links="architecture"
-                data-cross-links="security"
-                data-kicker="全栈工程 · 02"
-                data-description="基于渲染流水线、事件循环和网络缓存定位性能瓶颈，并通过 CSP、CORS 与输入输出编码控制浏览器侧风险。"
-                data-tags="HTTP / 缓存|Web Vitals|CSP / CORS|DevTools"
-                aria-controls="skill-tooltip"
-                aria-pressed="false"
-              >
-                <span class="skill-node__title">浏览器与 Web</span>
-                <span class="skill-node__meta">原理 · 性能 · 安全</span>
-              </button>
+                <div class="capability-domain__branches">
+                  <article class="capability-branch">
+                    <div class="capability-branch__title">
+                      <span>01</span>
+                      <h4>前端产品工程</h4>
+                    </div>
+                    <p>从交互与组件抽象，到复杂页面状态、数据流和性能体验，构建可维护的产品界面。</p>
+                    <ul class="capability-tags">
+                      <li>TypeScript</li><li>React</li><li>Vue</li><li>Vite</li><li>状态管理</li><li>微前端</li>
+                    </ul>
+                    <a href="#skills" data-skill-document="frontend" hidden>实践说明 ↗</a>
+                  </article>
 
-              <button
-                class="skill-node skill-node--capability skill-node--backend"
-                type="button"
-                style="--x: 75%; --y: 24%"
-                data-node-id="backend"
-                data-title="后端与数据"
-                data-links="security"
-                data-cross-links="agent-development"
-                data-kicker="全栈工程 · 03"
-                data-description="以接口契约和领域模型组织服务，使用事务、幂等、缓存与异步任务保障数据一致性和业务吞吐。"
-                data-tags="Go / Node.js|HTTP / RPC|SQL / Redis|事务与幂等"
-                aria-controls="skill-tooltip"
-                aria-pressed="false"
-              >
-                <span class="skill-node__title">后端与数据</span>
-                <span class="skill-node__meta">API · 建模 · 并发</span>
-              </button>
+                  <article class="capability-branch">
+                    <div class="capability-branch__title">
+                      <span>02</span>
+                      <h4>后端服务设计</h4>
+                    </div>
+                    <p>围绕 API 契约、服务边界、业务编排与异步任务，完成从接口设计到稳定交付。</p>
+                    <ul class="capability-tags">
+                      <li>Go</li><li>Node.js</li><li>HTTP / RPC</li><li>IDL</li><li>并发控制</li><li>任务调度</li>
+                    </ul>
+                    <a href="#skills" data-skill-document="backend" hidden>实践说明 ↗</a>
+                  </article>
 
-              <button
-                class="skill-node skill-node--capability skill-node--architecture"
-                type="button"
-                style="--x: 14%; --y: 50%"
-                data-node-id="architecture"
-                data-title="架构设计"
-                data-links="production"
-                data-cross-links="backend agent-runtime"
-                data-kicker="系统工程 · 04"
-                data-description="通过模块边界、接口契约和事件驱动隔离变化，并根据规模在一致性、扩展性、复杂度与成本之间取舍。"
-                data-tags="模块边界|接口契约|事件驱动|架构演进"
-                aria-controls="skill-tooltip"
-                aria-pressed="false"
-              >
-                <span class="skill-node__title">架构设计</span>
-                <span class="skill-node__meta">边界 · 扩展 · 权衡</span>
-              </button>
+                  <article class="capability-branch">
+                    <div class="capability-branch__title">
+                      <span>03</span>
+                      <h4>数据与状态</h4>
+                    </div>
+                    <p>通过数据建模、事务、索引与缓存组织访问路径，维护跨页面与服务的状态一致性。</p>
+                    <ul class="capability-tags">
+                      <li>MySQL</li><li>PostgreSQL</li><li>Redis</li><li>SQL</li><li>事务</li><li>缓存</li>
+                    </ul>
+                    <a href="#skills" data-skill-document="data" hidden>实践说明 ↗</a>
+                  </article>
 
-              <button
-                class="skill-node skill-node--capability skill-node--security"
-                type="button"
-                style="--x: 86%; --y: 50%"
-                data-node-id="security"
-                data-title="安全与可靠性"
-                data-links="agent-development"
-                data-cross-links="agent-runtime"
-                data-kicker="系统工程 · 05"
-                data-description="从 OAuth/OIDC 身份认证、RBAC/ABAC 授权到输入校验、限流降级与审计，建立纵深防御和故障边界。"
-                data-tags="OAuth / OIDC|RBAC / ABAC|OWASP|限流与降级"
-                aria-controls="skill-tooltip"
-                aria-pressed="false"
-              >
-                <span class="skill-node__title">安全与可靠性</span>
-                <span class="skill-node__meta">权限 · 防护 · 容错</span>
-              </button>
+                  <article class="capability-branch">
+                    <div class="capability-branch__title">
+                      <span>04</span>
+                      <h4>工程交付</h4>
+                    </div>
+                    <p>覆盖开发、测试、部署与问题定位，用可复现的环境和自动化流程保障交付质量。</p>
+                    <ul class="capability-tags">
+                      <li>Docker</li><li>Linux</li><li>Git</li><li>CI / CD</li><li>自动化测试</li><li>可观测性</li>
+                    </ul>
+                    <a href="#skills" data-skill-document="delivery" hidden>实践说明 ↗</a>
+                  </article>
+                </div>
+              </section>
 
-              <button
-                class="skill-node skill-node--capability skill-node--production"
-                type="button"
-                style="--x: 25%; --y: 76%"
-                data-node-id="production"
-                data-title="交付与运维"
-                data-links="agent-runtime"
-                data-cross-links="agent-development security"
-                data-kicker="工程交付 · 06"
-                data-description="用分层测试、CI/CD、灰度回滚和 Logs/Metrics/Trace 串联代码提交、上线监控与故障恢复。"
-                data-tags="自动化测试|Docker / CI/CD|Logs / Metrics / Trace|灰度与回滚"
-                aria-controls="skill-tooltip"
-                aria-pressed="false"
-              >
-                <span class="skill-node__title">交付与运维</span>
-                <span class="skill-node__meta">测试 · 部署 · 观测</span>
-              </button>
+              <section class="capability-domain capability-domain--agent" aria-labelledby="agent-title">
+                <header class="capability-domain__head">
+                  <div>
+                    <p>DOMAIN 02 / MODEL TO ACTION</p>
+                    <h3 id="agent-title">Agent 工程</h3>
+                  </div>
+                  <span>字节跳动 Agent 工程实践</span>
+                  <a href="#skills" data-skill-document="agent" hidden>实践说明 ↗</a>
+                </header>
 
-              <button
-                class="skill-node skill-node--capability skill-node--agent-development"
-                type="button"
-                style="--x: 75%; --y: 76%"
-                data-node-id="agent-development"
-                data-title="Agent 开发"
-                data-links="agent-runtime"
-                data-cross-links="product"
-                data-kicker="Agent 开发 · 07"
-                data-description="基于第三方云模型 API，围绕任务上下文、工具接入和结构化输出构建可执行、可集成的智能体能力。"
-                data-tags="第三方模型 API|Context Engineering|Structured Output|Tool Calling / MCP"
-                aria-controls="skill-tooltip"
-                aria-pressed="false"
-              >
-                <span class="skill-node__title">Agent 开发</span>
-                <span class="skill-node__meta">上下文 · 工具 · API</span>
-              </button>
+                <div class="capability-domain__branches">
+                  <article class="capability-branch">
+                    <div class="capability-branch__title">
+                      <span>01</span>
+                      <h4>模型应用工程</h4>
+                    </div>
+                    <p>组织任务指令、上下文、外部知识和输出约束，让模型结果可用、可解析、可验证。</p>
+                    <ul class="capability-tags">
+                      <li>Prompt</li><li>Context Engineering</li><li>RAG</li><li>Embedding</li><li>Structured Output</li>
+                    </ul>
+                    <a href="#skills" data-skill-document="model-app" hidden>实践说明 ↗</a>
+                  </article>
 
-              <button
-                class="skill-node skill-node--capability skill-node--agent-runtime"
-                type="button"
-                style="--x: 50%; --y: 87%"
-                data-node-id="agent-runtime"
-                data-title="Agent 运行时"
-                data-kicker="Agent 开发 · 08"
-                data-description="将工作流、状态记忆、检查点与人工审批组成可恢复的执行循环，让长任务在真实业务环境中稳定运行。"
-                data-tags="Workflow / Planning|State / Memory|Checkpoint / Recovery|Human-in-the-loop"
-                aria-controls="skill-tooltip"
-                aria-pressed="false"
-              >
-                <span class="skill-node__title">Agent 运行时</span>
-                <span class="skill-node__meta">编排 · 状态 · 恢复</span>
-              </button>
+                  <article class="capability-branch">
+                    <div class="capability-branch__title">
+                      <span>02</span>
+                      <h4>Agent Runtime</h4>
+                    </div>
+                    <p>把模型决策接入真实工具与业务系统，组织可终止、可校验的任务循环和工作流。</p>
+                    <ul class="capability-tags">
+                      <li>Tool Calling</li><li>MCP</li><li>Agent Loop</li><li>Workflow</li><li>Planning</li><li>State</li>
+                    </ul>
+                    <a href="#skills" data-skill-document="runtime" hidden>实践说明 ↗</a>
+                  </article>
+
+                  <article class="capability-branch">
+                    <div class="capability-branch__title">
+                      <span>03</span>
+                      <h4>可靠 Agent Harness</h4>
+                    </div>
+                    <p>为长任务建立持久化、检查点、幂等与恢复机制，使执行能够暂停、续跑和安全重试。</p>
+                    <ul class="capability-tags">
+                      <li>Persistence</li><li>Checkpoint</li><li>Idempotency</li><li>Retry</li><li>Resume</li><li>Recovery</li>
+                    </ul>
+                    <a href="#skills" data-skill-document="harness" hidden>实践说明 ↗</a>
+                  </article>
+
+                  <article class="capability-branch">
+                    <div class="capability-branch__title">
+                      <span>04</span>
+                      <h4>治理、观测与评估</h4>
+                    </div>
+                    <p>通过权限门禁、人工确认、执行追踪和行为评估，约束 Agent 的行动边界与结果质量。</p>
+                    <ul class="capability-tags">
+                      <li>Permission</li><li>Approval</li><li>Human-in-the-loop</li><li>Trace</li><li>Metrics</li><li>Eval</li>
+                    </ul>
+                    <a href="#skills" data-skill-document="governance" hidden>实践说明 ↗</a>
+                  </article>
+                </div>
+              </section>
             </div>
 
-            <aside class="skill-tooltip" id="skill-tooltip" data-skill-tooltip aria-live="polite" aria-hidden="true">
-              <p class="skill-tooltip__kicker"></p>
-              <h3 class="skill-tooltip__title"></h3>
-              <p class="skill-tooltip__description"></p>
-              <p class="skill-tooltip__stack-label">工程要点</p>
-              <div class="skill-tooltip__tags"></div>
-            </aside>
+            <section class="capability-foundation" aria-labelledby="foundation-title">
+              <header>
+                <p>FOUNDATION / 两条主枝共用的工程底座</p>
+                <h3 id="foundation-title">把能力组织成可交付系统</h3>
+              </header>
+              <ul>
+                <li><strong>接口与契约</strong><span>API · IDL · Schema · Validation</span></li>
+                <li><strong>状态与一致性</strong><span>Transaction · Checkpoint · Idempotency</span></li>
+                <li><strong>测试与评估</strong><span>Unit · Integration · E2E · Eval</span></li>
+                <li><strong>观测与排障</strong><span>Logs · Metrics · Trace · Recovery</span></li>
+              </ul>
+            </section>
 
-            <div class="skills-graph__footer" aria-hidden="true">
-              <span>两条主线 · 全栈开发 × Agent 工程</span>
-              <span>ESC 取消锁定</span>
+            <div class="capability-tree__footer" aria-hidden="true">
+              <span>AI FULL-STACK ENGINEER / 2026</span>
+              <span>产品交互 → 服务与数据 → Agent 执行与可靠性</span>
             </div>
           </div>
         </section>
-        <section class="experience-section reveal" id="experience" aria-labelledby="experience-title">
-          <div class="experience-section__heading">
+        <section class="experience-section" id="experience" aria-labelledby="experience-title">
+          <div class="experience-section__heading portfolio-section__heading reveal">
             <div>
-              <p class="experience-section__eyebrow">02 / EXPERIENCE</p>
+              <p class="experience-section__eyebrow portfolio-section__eyebrow">03 / EXPERIENCE</p>
               <h2 id="experience-title">实习经历</h2>
             </div>
+            <p class="experience-section__note">聚焦 AI 产品研发、Agent 工程与端到端交付，用结果说明职责与影响。</p>
           </div>
 
-          <article class="experience-entry">
+          <article class="experience-entry reveal">
             <header class="experience-entry__header">
               <div class="experience-entry__identity">
                 <p class="experience-entry__company-label">BYTEDANCE</p>
@@ -447,45 +535,208 @@
             </footer>
           </article>
         </section>
-        <div class="section-list">
-          <article class="profile-card reveal" id="projects" tabindex="0">
-            <div class="profile-card__number">03</div>
-            <div class="profile-card__body">
-              <p class="profile-card__meta">PROJECTS / 从零到一</p>
-              <h3>项目实践</h3>
-              <p>围绕具体问题完成设计、开发与验证，让每次实践都有清晰结果。</p>
-              <div class="tag-row">
-                <span>产品思考</span><span>技术实现</span><span>结果验证</span>
-              </div>
+        <section class="projects-section" id="projects" aria-labelledby="projects-title">
+          <header class="projects-section__heading portfolio-section__heading reveal">
+            <div>
+              <p class="projects-section__eyebrow portfolio-section__eyebrow">04 / SELECTED BUILDS</p>
+              <h2 id="projects-title">独立产品</h2>
             </div>
-            <div class="profile-card__state">
-              <span>内容准备中</span>
-              <span class="round-arrow" aria-hidden="true">↗</span>
-            </div>
-          </article>
-        </div>
-      </section>
+            <p>
+              从 AI 知识工作流、平台工程到实时协作，把完整产品部署到真实环境。
+            </p>
+          </header>
 
-      <section class="closing" aria-label="结语">
-        <div class="closing__orb" aria-hidden="true">
-          <span></span><span></span><span></span>
-        </div>
-        <p class="eyebrow"><span></span> KEEP CREATING</p>
-        <h2>下一段故事，<br />正在发生。</h2>
-        <p>这里会继续记录我的技能、经历与作品。</p>
-        <a class="button button--light magnetic" href="#top">回到顶部 <span>↑</span></a>
+          <div class="project-gallery">
+            <article class="product-card product-card--forest reveal">
+              <header class="product-card__head">
+                <span class="product-card__number">01</span>
+                <div>
+                  <p>AI KNOWLEDGE WORKFLOW</p>
+                  <span>V0.1 · GPU 演示环境</span>
+                </div>
+              </header>
+
+              <div class="product-card__layout">
+                <div class="product-card__content">
+                  <p class="product-card__role">独立产品设计与全栈实现</p>
+                  <h3>论迹<small>Research Workbench</small></h3>
+                  <p class="product-card__description">面向科研阅读的私有知识工作台，把 PDF 上传、连续阅读、全文检索、划词翻译、高亮批注与 Markdown 笔记收进一个完整闭环。</p>
+
+                  <div class="product-card__proofs">
+                  <div class="product-proof">
+                    <span>阅读定位</span>
+                    <p>PDF.js 目录、全文搜索与阅读位置恢复</p>
+                  </div>
+                  <div class="product-proof">
+                    <span>证据沉淀</span>
+                    <p>文本上下文与页面坐标双锚点批注</p>
+                  </div>
+                  <div class="product-proof">
+                    <span>可靠保存</span>
+                    <p>笔记延迟保存与版本冲突保护</p>
+                  </div>
+                  </div>
+
+                  <div class="tag-row"><span>React 19</span><span>TypeScript</span><span>FastAPI</span><span>PDF.js</span><span>SQLite</span></div>
+
+                  <div class="product-card__actions">
+                    <a class="project-action project-action--primary magnetic" href="https://elementary-von-appreciation-stretch.trycloudflare.com" target="_blank" rel="noreferrer">
+                      进入论迹 <span aria-hidden="true">↗</span>
+                    </a>
+                  </div>
+                </div>
+
+                <a class="product-card__visual" href="https://elementary-von-appreciation-stretch.trycloudflare.com" target="_blank" rel="noreferrer" aria-label="进入论迹（新窗口打开）">
+                  <span class="product-card__browser-bar" aria-hidden="true"><i></i><i></i><i></i><b>LIVE PRODUCT</b></span>
+                  <img src="./assets/projects/research-workbench.png" alt="论迹登录页，展示科研阅读工作台的品牌主视觉" width="1440" height="900" loading="lazy" />
+                  <span class="product-card__visual-note">临时演示地址 <b aria-hidden="true">↗</b></span>
+                </a>
+              </div>
+            </article>
+            <article class="product-card product-card--blue reveal">
+              <header class="product-card__head">
+                <span class="product-card__number">02</span>
+                <div>
+                  <p>PLATFORM ENGINEERING</p>
+                  <span>MVP · GPU 演示环境</span>
+                </div>
+              </header>
+
+              <div class="product-card__layout">
+                <div class="product-card__content">
+                  <p class="product-card__role">产品架构、全栈开发与部署</p>
+                  <h3>Algorithm Lab<small>全栈算法训练平台</small></h3>
+                  <p class="product-card__description">覆盖题库组织、在线编程、异步判题、学习进度与间隔复习，并通过公共/私人题库边界和整套审核流程处理内容治理。</p>
+
+                  <div class="product-card__proofs">
+                  <div class="product-proof">
+                    <span>异步判题</span>
+                    <p>Redis + BullMQ 解耦 Web 与判题 Worker</p>
+                  </div>
+                  <div class="product-proof">
+                    <span>运行隔离</span>
+                    <p>低权限原生沙箱、资源限制与超时终止</p>
+                  </div>
+                  <div class="product-proof">
+                    <span>权限治理</span>
+                    <p>私人题库隔离与公共题库整套审核</p>
+                  </div>
+                  </div>
+
+                  <div class="tag-row"><span>Next.js 16</span><span>Prisma</span><span>PostgreSQL</span><span>Redis</span><span>BullMQ</span></div>
+
+                  <div class="product-card__actions">
+                    <a class="project-action project-action--primary magnetic" href="https://forget-charges-glass-accordance.trycloudflare.com" target="_blank" rel="noreferrer">
+                      进入平台 <span aria-hidden="true">↗</span>
+                    </a>
+                  <a class="project-action project-action--secondary magnetic" href="./playground.html">
+                    免登录快速体验 <span aria-hidden="true">→</span>
+                  </a>
+                  </div>
+                </div>
+
+                <a class="product-card__visual" href="https://forget-charges-glass-accordance.trycloudflare.com" target="_blank" rel="noreferrer" aria-label="进入平台（新窗口打开）">
+                  <span class="product-card__browser-bar" aria-hidden="true"><i></i><i></i><i></i><b>LIVE PRODUCT</b></span>
+                  <img src="./assets/projects/algorithm-lab.png" alt="Algorithm Lab 全部题目页面，展示题目筛选与题库信息" width="1440" height="900" loading="lazy" />
+                  <span class="product-card__visual-note">临时演示地址 <b aria-hidden="true">↗</b></span>
+                </a>
+              </div>
+            </article>
+            <article class="product-card product-card--green reveal">
+              <header class="product-card__head">
+                <span class="product-card__number">03</span>
+                <div>
+                  <p>REAL-TIME COLLABORATION</p>
+                  <span>DEMO · GPU 演示环境</span>
+                </div>
+              </header>
+
+              <div class="product-card__layout">
+                <div class="product-card__content">
+                  <p class="product-card__role">全栈开发与实时协作设计</p>
+                  <h3>WriteHere<small>Horizon Docs</small></h3>
+                  <p class="product-card__description">轻量级在线文档协作平台，覆盖个人文档、公开社区、分享链接、协作申请审批、多人实时编辑与消息通知。</p>
+
+                  <div class="product-card__proofs">
+                  <div class="product-proof">
+                    <span>实时协同</span>
+                    <p>TipTap + Yjs 同步内容、光标与在线成员</p>
+                  </div>
+                  <div class="product-proof">
+                    <span>双 WebSocket</span>
+                    <p>协同编辑与业务通知使用独立通道</p>
+                  </div>
+                  <div class="product-proof">
+                    <span>权限闭环</span>
+                    <p>作者、协作者和访客的读写能力一致</p>
+                  </div>
+                  </div>
+
+                  <div class="tag-row"><span>Vue 3</span><span>TipTap</span><span>Yjs</span><span>Express</span><span>WebSocket</span></div>
+
+                  <div class="product-card__actions">
+                    <a class="project-action project-action--primary magnetic" href="https://dollar-wendy-buildings-year.trycloudflare.com" target="_blank" rel="noreferrer">
+                      进入 WriteHere <span aria-hidden="true">↗</span>
+                    </a>
+                  </div>
+                </div>
+
+                <a class="product-card__visual" href="https://dollar-wendy-buildings-year.trycloudflare.com" target="_blank" rel="noreferrer" aria-label="进入 WriteHere（新窗口打开）">
+                  <span class="product-card__browser-bar" aria-hidden="true"><i></i><i></i><i></i><b>LIVE PRODUCT</b></span>
+                  <img src="./assets/projects/write-here.png" alt="WriteHere 登录页，展示极简像素风格的 Horizon Docs 品牌界面" width="1440" height="900" loading="lazy" />
+                  <span class="product-card__visual-note">临时演示地址 <b aria-hidden="true">↗</b></span>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <section class="project-cases reveal" aria-labelledby="project-cases-title">
+            <header class="project-cases__heading">
+              <div>
+                <p>ADDITIONAL WORK</p>
+                <h3 id="project-cases-title">工程经历项目</h3>
+              </div>
+              <span>真实业务中的 Agent 工程与全栈交付</span>
+            </header>
+
+            <div class="project-cases__grid">
+              <article class="project-case">
+                <span class="project-case__index">A / 01</span>
+                <p class="project-case__meta">AGENT ENGINEERING</p>
+                <h4>研发 Agent Harness</h4>
+                <p>
+                  以 Agent 分析决策、确定性脚本执行关键操作，结合状态持久化、事件幂等、权限门禁与执行审计，建设 TraceAgent 与 FixAgent。
+                </p>
+                <strong>跟踪 24 个问题 · 推动 20 个处理</strong>
+              </article>
+
+              <a class="project-case project-case--link" href="https://jp.liyunol.com" target="_blank" rel="noreferrer">
+                <span class="project-case__index">A / 02</span>
+                <p class="project-case__meta">FULL-STACK DELIVERY</p>
+                <h4>教育培训管理平台</h4>
+                <p>
+                  面向全国教师培训场景交付直播录播、多渠道支付、社区评论与在线考试，处理微前端集成、支付回调幂等和高并发考试。
+                </p>
+                <strong>20 万+用户 · 日活 1 万+ <span aria-hidden="true">↗</span></strong>
+              </a>
+            </div>
+          </section>
+        </section>
       </section>
     </main>
 
     <footer class="site-footer">
-      <span>© 2026 GSY</span>
-      <span>DESIGNED WITH CURIOSITY</span>
+      <span>© 2026 郭书羽</span>
+      <a href="mailto:gsyiswatchingu@163.com">联系我 · gsyiswatchingu@163.com</a>
     </footer>
 
     <script defer src="./scripts/galaxy.js"></script>
     <script defer src="./scripts/header.js"></script>
     <script defer src="./scripts/reveal.js"></script>
     <script defer src="./scripts/cursor.js"></script>
+    <script defer src="./scripts/skill-links.js"></script>
     <script defer src="./scripts/skills.js"></script>
+    <script defer src="./scripts/guestbook-config.js"></script>
+    <script defer src="./scripts/guestbook.js"></script>
   </body>
 </html>

@@ -1,0 +1,66 @@
+      <p class="guestbook__toast" id="guestbook-toast" role="status" aria-live="polite"></p>
+
+      <dialog class="guestbook-dialog" id="guestbook-dialog" aria-labelledby="guestbook-dialog-title">
+        <form class="guestbook-dialog__form" id="guestbook-form">
+          <header class="guestbook-dialog__head">
+            <div>
+              <p>LEAVE A SIGNAL</p>
+              <h3 id="guestbook-dialog-title">写下一句话</h3>
+            </div>
+            <button class="guestbook-dialog__close" id="guestbook-close" type="button" aria-label="关闭留言弹窗">×</button>
+          </header>
+
+          <label for="guestbook-nickname">怎么称呼你</label>
+          <input
+            id="guestbook-nickname"
+            name="nickname"
+            type="text"
+            minlength="2"
+            maxlength="20"
+            autocomplete="nickname"
+            placeholder="昵称"
+            required
+          />
+
+          <div class="guestbook-dialog__label-row">
+            <label for="guestbook-content">留言</label>
+            <span><span id="guestbook-character-count">0</span>/300</span>
+          </div>
+          <textarea
+            id="guestbook-content"
+            name="content"
+            minlength="2"
+            maxlength="300"
+            rows="5"
+            placeholder="建议、问题，或者一句路过的招呼。"
+            required
+          ></textarea>
+
+          <div class="guestbook__honeypot" aria-hidden="true">
+            <label for="guestbook-website">网站</label>
+            <input id="guestbook-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <p class="guestbook-dialog__status" id="guestbook-status" role="status" aria-live="polite"></p>
+          <button class="guestbook-dialog__submit" id="guestbook-submit" type="submit">
+            <span class="guestbook-launch__copy">
+              <span class="guestbook-launch__overline">SEND TO ORBIT</span>
+              <span class="guestbook-launch__label">发射到星海</span>
+            </span>
+            <span class="guestbook-launch__scene" aria-hidden="true">
+              <span class="guestbook-launch__orbit"></span>
+              <span class="guestbook-launch__star guestbook-launch__star--one"></span>
+              <span class="guestbook-launch__star guestbook-launch__star--two"></span>
+              <span class="guestbook-launch__star guestbook-launch__star--three"></span>
+              <span class="guestbook-launch__craft">
+                <svg viewBox="0 0 28 34" focusable="false">
+                  <path class="guestbook-launch__craft-body" d="M14 2.2c4.2 3.9 6.3 8.3 6.3 13.1v7.3L16.8 26H11l-3.4-3.4v-7.3C7.6 10.5 9.7 6.1 14 2.2Z" />
+                  <path class="guestbook-launch__craft-window" d="M14 9.2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z" />
+                  <path class="guestbook-launch__craft-fin" d="m7.6 18.2-4 5.8v4.1l7.3-3.5M20.3 18.2l4.1 5.8v4.1L17 24.6" />
+                </svg>
+                <span class="guestbook-launch__flame"></span>
+              </span>
+            </span>
+          </button>
+        </form>
+      </dialog>
